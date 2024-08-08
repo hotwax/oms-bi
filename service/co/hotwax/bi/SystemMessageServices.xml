@@ -1,0 +1,17 @@
+<services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
+
+    <service verb="consume" noun="OlapDataSystemMessage">
+        <implements service="org.moqui.impl.SystemMessageServices.consume#SystemMessage"/>
+        <actions>
+            <entity-find-one entity-name="moqui.service.message.SystemMessage" value-field="systemMessage"/>
+            <set field="fileText" from="ec.resource.getLocationReference(systemMessage.messageText).getText()"/>
+            
+            <script>
+                recordsLoaded = ec.entity.makeDataLoader().csvText(fileText).load()
+            </script>
+
+            <message>Loaded ${recordsLoaded} time summary records</message>
+        </actions>
+    </service>
+</services>
