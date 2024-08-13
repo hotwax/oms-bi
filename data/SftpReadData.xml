@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<entity-facade-xml type="demo">
+<entity-facade-xml type="ext">
     <moqui.service.message.SystemMessageType
             systemMessageTypeId="ReadOLAPData"
             description="Reads the CSV file from SFTP and stores the data in entity which is defined in CSV file"
