@@ -20,8 +20,9 @@ under the License.
 
 <entities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/entity-definition-3.xsd">
     <entity entity-name="OrderItemFulfillmentFact" package="co.hotwax.bi.fact" group="analytical">
-        <field name="orderId" type="id" is-pk="true"/>
-        <field name="orderItemSeqId" type="id" is-pk="true"/>
+        <field name="orderItemFulfillmentFactId" type="id" is-pk="true"/>
+        <field name="orderId" type="id" />
+        <field name="orderItemSeqId" type="id" />
         <field name="externalId" type="text-short"/>
         <field name="orderName" type="text-short"/>
         <field name="orderTypeId" type="id"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <services xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/service-definition-3.xsd">
     <!--    <service verb="load" type="script" noun="DateDimension" location="component://bi/src/loadDateDimension.groovy">-->
-    <service verb="load" noun="DateDayDimension">
+    <service verb="load" noun="DateDayDimension" transaction-timeout="300">
         <in-parameters>
             <parameter name="fromDate" type="Timestamp" format="yyyy-MM-dd" required="true">
                 <description>From date to generate the date dimension</description>
