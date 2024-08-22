@@ -74,10 +74,10 @@ under the License.
         <relationship type="one-nofk" related="co.hotwax.bi.dimension.ProductDimension">
             <key-map field-name="productId"/>
         </relationship>
-        <relationship type="one-nofk" related="co.hotwax.bi.dimension.DateDayDimension">
+        <relationship type="one-nofk" related="moqui.olap.DateDayDimension">
             <key-map field-name="itemCompletedDateDimId" related="dateValue"/>
         </relationship>
-        <relationship type="one-nofk" related="co.hotwax.bi.dimension.DateDayDimension">
+        <relationship type="one-nofk" related="moqui.olap.DateDayDimension">
             <key-map field-name="itemCancelledDateDimId" related="dateValue"/>
         </relationship>
     </entity>
