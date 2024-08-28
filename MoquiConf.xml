@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!-- No copyright or license for configuration file, details here are not considered a creative work. -->
 <moqui-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://moqui.org/xsd/moqui-conf-3.xsd">
-    <default-property name="bi_entity_ds_db_conf" value="mysql8"/>
+    <!-- <default-property name="bi_entity_ds_db_conf" value="mysql8"/>
     <default-property name="bi_entity_ds_host" value="127.0.0.1"/>
     <default-property name="bi_entity_ds_user" value="root"/>
     <default-property name="bi_entity_ds_password" value="123456"/>
@@ -21,5 +21,5 @@
                                databaseName="${bi_entity_ds_database}" user="${bi_entity_ds_user}" password="${bi_entity_ds_password}"/>
             </inline-jdbc>
         </datasource>
-    </entity-facade>
+    </entity-facade> -->
 </moqui-conf>
