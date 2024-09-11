@@ -41,7 +41,10 @@ under the License.
         <field name="itemCompletedDateDimId" type="date"/>
         <field name="itemCancelledDate" type="date-time"/>
         <field name="itemCancelledDateDimId" type="date"/>
+        <field name="itemCreatedDate" type="date-time"/>
         <field name="itemApprovedDate" type="date-time"/>
+        <field name="brokeredDate" type="date-time"/>
+        <field name="brokeredComments" type="text-very-long"/>
         <field name="shipmentMethodTypeId" type="id"/>
         <field name="shipGroupCreatedStamp" type="date-time"/>
         <field name="facilityId" type="id"/>
@@ -54,9 +57,10 @@ under the License.
         <field name="destLongitude" type="number-float"/>
         <field name="trackingIdNumber" type="text-medium"/>
         <field name="shipmentId" type="id"/>
-        <field name="brokeredDate" type="date-time"/>
-        <field name="packedDate" type="date-time"/>
-        <field name="shippedDate" type="date-time"/>
+        <field name="shipmentInputDate" type="date-time"/>
+        <field name="shipmentApprovedDate" type="date-time"/>
+        <field name="shipmentPackedDate" type="date-time"/>
+        <field name="shipmentShippedDate" type="date-time"/>
         <field name="originFacilityId" type="id"/>
         <field name="destFacilityId" type="id"/>
         <field name="actualCarrierCode" type="id"/>
