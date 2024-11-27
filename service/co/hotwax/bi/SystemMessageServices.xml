@@ -15,17 +15,16 @@
             <set field="fileText" from="ec.resource.getLocationReference(filePath).getText()"/>
 
             <!-- Check if the file content is empty -->
-            <if condition="fileText.isEmpty()">
+            <if condition="fileText == null || fileText.isEmpty()">
                 <return error="true" message="The file content is empty."/>
             </if>
 
             <set field="fileContentType" from="ec.resource.getContentType(filePath)"/>
-            <set field="jsonType" value="application/json"/>
 
             <set field="edl" from="ec.entity.makeDataLoader()"/>
 
             <script>
-                if(fileContentType == jsonType) {
+                if(fileContentType == "application/json") {
                     edl.jsonText(fileText)
                 } else {
                     edl.csvText(fileText)
