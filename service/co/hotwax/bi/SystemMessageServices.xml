@@ -4,13 +4,36 @@
     <service verb="consume" noun="OlapDataSystemMessage">
         <implements service="org.moqui.impl.SystemMessageServices.consume#SystemMessage"/>
         <actions>
+            <!-- Check if systemMessage is empty or null -->
             <entity-find-one entity-name="moqui.service.message.SystemMessage" value-field="systemMessage"/>
-            <set field="fileText" from="ec.resource.getLocationReference(systemMessage.messageText).getText()"/>
-            
+
+            <if condition="systemMessage == null || systemMessage.isEmpty()">
+                <return error="true" message="System message is empty, no data to process."/>
+            </if>
+
+            <set field="filePath" from="systemMessage.messageText"/>
+            <set field="fileText" from="ec.resource.getLocationReference(filePath).getText()"/>
+
+            <!-- Check if the file content is empty -->
+            <if condition="fileText.isEmpty()">
+                <return error="true" message="The file content is empty."/>
+            </if>
+
+            <set field="fileContentType" from="ec.resource.getContentType(filePath)"/>
+            <set field="jsonType" value="application/json"/>
+
+            <set field="edl" from="ec.entity.makeDataLoader()"/>
+
             <script>
-                recordsLoaded = ec.entity.makeDataLoader().csvText(fileText).load()
+                if(fileContentType == jsonType) {
+                    edl.jsonText(fileText)
+                } else {
+                    edl.csvText(fileText)
+                }
             </script>
 
+            <!-- Loading data with EntityDataLoader -->
+            <set field="recordsLoaded" from="edl.load()"/>
             <message>Loaded ${recordsLoaded} time summary records</message>
         </actions>
     </service>
