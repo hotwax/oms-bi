@@ -6,23 +6,17 @@
         <actions>
             <!-- Check if systemMessage is empty or null -->
             <entity-find-one entity-name="moqui.service.message.SystemMessage" value-field="systemMessage"/>
-
             <if condition="!systemMessage">
-                <return error="true" message="System message is empty, no data to process."/>
+                <return error="true" message="System message found for id ${systemMessageId}."/>
             </if>
-
             <set field="filePath" from="systemMessage.messageText"/>
             <set field="fileText" from="ec.resource.getLocationReference(filePath).getText()"/>
-
             <!-- Check if the file content is empty -->
             <if condition="!fileText">
-                <return error="true" message="The file is not found or content is empty."/>
+                <return error="true" message="The file ${filePath} not found or content is empty."/>
             </if>
-
             <set field="fileContentType" from="ec.resource.getContentType(filePath)"/>
-
             <set field="edl" from="ec.entity.makeDataLoader()"/>
-
             <script>
                 if(fileContentType == "application/json") {
                     edl.jsonText(fileText)
@@ -30,10 +24,9 @@
                     edl.csvText(fileText)
                 }
             </script>
-
             <!-- Loading data with EntityDataLoader -->
             <set field="recordsLoaded" from="edl.load()"/>
-            <message>Loaded ${recordsLoaded} time summary records</message>
+            <message>Loaded ${recordsLoaded} records</message>
         </actions>
     </service>
 </services>
