@@ -7,7 +7,7 @@
             <!-- Check if systemMessage is empty or null -->
             <entity-find-one entity-name="moqui.service.message.SystemMessage" value-field="systemMessage"/>
             <if condition="!systemMessage">
-                <return error="true" message="System message found for id ${systemMessageId}."/>
+                <return error="true" message="System message not found for id ${systemMessageId}."/>
             </if>
             <set field="filePath" from="systemMessage.messageText"/>
             <set field="fileText" from="ec.resource.getLocationReference(filePath).getText()"/>
