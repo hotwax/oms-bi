@@ -7,7 +7,7 @@
             <!-- Check if systemMessage is empty or null -->
             <entity-find-one entity-name="moqui.service.message.SystemMessage" value-field="systemMessage"/>
 
-            <if condition="systemMessage == null || systemMessage.isEmpty()">
+            <if condition="!systemMessage">
                 <return error="true" message="System message is empty, no data to process."/>
             </if>
 
@@ -15,8 +15,8 @@
             <set field="fileText" from="ec.resource.getLocationReference(filePath).getText()"/>
 
             <!-- Check if the file content is empty -->
-            <if condition="fileText == null || fileText.isEmpty()">
-                <return error="true" message="The file content is empty."/>
+            <if condition="!fileText">
+                <return error="true" message="The file is not found or content is empty."/>
             </if>
 
             <set field="fileContentType" from="ec.resource.getContentType(filePath)"/>
