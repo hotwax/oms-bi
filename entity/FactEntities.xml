@@ -24,6 +24,7 @@ under the License.
         <field name="orderId" type="id" />
         <field name="orderItemSeqId" type="id" />
         <field name="externalId" type="text-short"/>
+        <field name="itemExternalId" type="id-long"/>
         <field name="orderName" type="text-short"/>
         <field name="orderTypeId" type="id"/>
         <field name="productStoreId" type="id"/>
