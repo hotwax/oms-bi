@@ -141,4 +141,17 @@ under the License.
         <relationship type="one-nofk" related="co.hotwax.bi.dimension.FacilityDimension"/>
         <relationship type="one-nofk" related="co.hotwax.bi.dimension.ProductDimension"/>
     </entity>
+    
+    <entity entity-name="AppeasementFact" package="co.hotwax.bi.fact">
+        <field name="appeasementFactId" type="id" is-pk="true"/>
+        <field name="returnId" type="id"/>
+        <field name="returnDate" type="date-time"/>
+        <field name="orderId" type="id"/>
+        <field name="comments" type="text-very-long"/>
+        <field name="description" type="text-medium"/>
+        <field name="amount" type="currency-amount"/>
+        <relationship type="one-nofk" related="co.hotwax.bi.fact.OrderItemFulfillmentFact">
+            <key-map field-name="orderId"/>
+        </relationship>
+    </entity>
 </entities>
