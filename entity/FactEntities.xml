@@ -114,4 +114,31 @@ under the License.
             <index-field name="orderItemSeqId"/>
         </index>
     </entity>
+    
+    <entity entity-name="ReturnItemFact" package="co.hotwax.bi.fact">
+        <field name="returnItemFactId" type="id" is-pk="true"/>
+        <field name="returnId" type="id"/>
+        <field name="returnItemSeqId" type="id"/>
+        <field name="externalReturnId" type="id"/>
+        <field name="dataResourceId" type="text-short"/>
+        <field name="returnDate" type="date-time"/>
+        <field name="returnHeaderTypeId" type="id"/>
+        <field name="destinationFacilityId" type="id"/>
+        <field name="returnChannelEnumId" type="id"/>
+        <field name="returnPrice" type="currency-amount"/>
+        <field name="itemStatusId" type="id"/>
+        <field name="returnDiscountAmt" type="currency-amount"/>
+        <field name="totalTaxRefundAmt" type="currency-amount"/>
+
+        <field name="productId" type="id"/>
+        <field name="orderId" type="id"/>
+        <field name="orderItemSeqId" type="id"/>
+
+        <relationship type="one-nofk" related="co.hotwax.bi.fact.OrderItemFulfillmentFact">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </relationship>
+        <relationship type="one-nofk" related="co.hotwax.bi.dimension.FacilityDimension"/>
+        <relationship type="one-nofk" related="co.hotwax.bi.dimension.ProductDimension"/>
+    </entity>
 </entities>
