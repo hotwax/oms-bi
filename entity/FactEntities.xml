@@ -145,6 +145,8 @@ under the License.
     <entity entity-name="AppeasementFact" package="co.hotwax.bi.fact">
         <field name="appeasementFactId" type="id" is-pk="true"/>
         <field name="returnId" type="id"/>
+        <field name="externalReturnId" type="id"/>
+        <field name="dataResourceId" type="text-short"/>
         <field name="returnDate" type="date-time"/>
         <field name="orderId" type="id"/>
         <field name="comments" type="text-very-long"/>
