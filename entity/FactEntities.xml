@@ -122,13 +122,25 @@ under the License.
         <field name="externalReturnId" type="id"/>
         <field name="dataSourceId" type="text-short"/>
         <field name="returnDate" type="date-time"/>
-        <field name="returnHeaderTypeId" type="id"/>
+        <field name="returnTypeId" type="id"/>
+        <field name="returnStatusId" type="id"/>
         <field name="destinationFacilityId" type="id"/>
+        <field name="employeeId" type="id"/>
+        <field name="createdByUserId" type="id-long"/>
         <field name="returnChannelEnumId" type="id"/>
+        <field name="returnItemStatusId" type="id"/>
+        <field name="returnItemReceivedDate" type="date-time"/>
+        <field name="returnItemCompletedDate" type="date-time"/>
         <field name="returnPrice" type="currency-amount"/>
-        <field name="itemStatusId" type="id"/>
         <field name="returnDiscountAmt" type="currency-amount"/>
         <field name="totalTaxRefundAmt" type="currency-amount"/>
+        <field name="returnItemDescription" type="text-long"/>
+        <field name="returnItemTypeId" type="id"/>
+        <field name="returnReasonId" type="id"/>
+        <field name="receivedQuantity" type="number-decimal"/>
+        <field name="returnQuantity" type="number-decimal"/>
+        <field name="receivedByUserLogin" type="id-long"/>
+        <field name="returnShipmentId" type="id"/>
 
         <field name="productId" type="id"/>
         <field name="orderId" type="id"/>
