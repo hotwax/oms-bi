@@ -126,7 +126,7 @@ under the License.
         <field name="returnStatusId" type="id"/>
         <field name="destinationFacilityId" type="id"/>
         <field name="employeeId" type="id"/>
-        <field name="createdByUserId" type="id-long"/>
+        <field name="createdByUserLogin" type="id-long"/>
         <field name="returnChannelEnumId" type="id"/>
         <field name="returnItemStatusId" type="id"/>
         <field name="returnItemReceivedDate" type="date-time"/>
