@@ -89,7 +89,7 @@ under the License.
     </entity>
 
     <entity entity-name="OrderAdjustmentFact" package="co.hotwax.bi.fact" group="analytical">
-        <field name="orderAdjustmentId" type="id" is-pk="true"/>
+        <field name="orderAdjustmentFactId" type="id" is-pk="true"/>
         <field name="orderId" type="id"/>
         <field name="orderItemSeqId" type="id"/>
 
