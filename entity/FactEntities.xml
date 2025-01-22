@@ -124,6 +124,8 @@ under the License.
         <field name="returnDate" type="date-time"/>
         <field name="returnTypeId" type="id"/>
         <field name="returnStatusId" type="id"/>
+        <field name="returnGrandTotal" type="currency-amount"/>
+        <field name="returnRefundedTotal" type="currency-amount"/>
         <field name="destinationFacilityId" type="id"/>
         <field name="employeeId" type="id"/>
         <field name="createdByUserLogin" type="id-long"/>
