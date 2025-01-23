@@ -68,4 +68,4 @@ SELECT
       AND oa.ORDER_ADJUSTMENT_TYPE_ID = 'EXT_TRANS_ADJUSTMENT'
   ) AS extTransAdjustment
 FROM
-  order_status_slice os;
+  order_status_slice os
