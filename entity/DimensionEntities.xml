@@ -59,7 +59,7 @@ under the License.
         <field name="enumTypeId" type="id"/>
         <field name="enumCode" type="text-medium"/>
         <field name="description" type="text-long"/>
-        <field name="sequenceId" type="id"/>
+        <field name="enumName" type="text-medium"/>
     </entity>
 </entities>
 
