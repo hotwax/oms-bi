@@ -138,6 +138,7 @@ under the License.
         <field name="returnPrice" type="currency-amount"/>
         <field name="returnDiscountAmt" type="currency-amount"/>
         <field name="totalTaxRefundAmt" type="currency-amount"/>
+        <field name="returnShippingAmt" type="currency-amount"/>
         <field name="returnItemDescription" type="text-long"/>
         <field name="returnItemTypeId" type="id"/>
         <field name="returnReasonId" type="id"/>

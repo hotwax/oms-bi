@@ -1,0 +1,12 @@
+{
+	"type": "record",
+	"name": "EnumerationDimension",
+	"namespace": "co.hotwax.bi.dimension",
+	"fields": [
+		{ "name": "enumId", "type": "string" },
+		{ "name": "enumTypeId", "type": "string" },
+		{ "name": "enumCode", "type": "string" },
+		{ "name": "description", "type": "string" },
+		{ "name": "enumName", "type": "string" }
+	]
+}

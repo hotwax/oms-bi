@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "FacilityDimension",
+  "namespace": "co.hotwax.bi.dimension",
+  "fields": [
+    { "name": "facilityId", "type": "string" },
+    { "name": "facilityName", "type": "string" },
+    { "name": "facilityTypeId", "type": "string" },
+    { "name": "parentTypeId", "type": "string" },
+    { "name": "latitude", "type": "float" },
+    { "name": "longitude", "type": "float" },
+    { "name": "city", "type": "string" },
+    { "name": "stateProvinceGeoId", "type": "string" },
+    { "name": "countryGeoId", "type": "string" },
+    { "name": "postalCode", "type": "string" },
+    { "name": "address1", "type": "string" }
+  ]
+}

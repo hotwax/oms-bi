@@ -1,0 +1,16 @@
+{
+  "type": "record",
+  "name": "OrderAdjustmentFact",
+  "namespace": "co.hotwax.bi.fact",
+  "fields": [
+    {"name": "orderId", "type": "string"},
+    {"name": "orderItemSeqId", "type": "string"},
+    {"name": "shippingCharges", "type": "double"},
+    {"name": "shippingSalesTax", "type": "double"},
+    {"name": "extShipAdjustment", "type": "double"},
+    {"name": "extPriceOverride", "type": "double"},
+    {"name": "extFeesAdjustment", "type": "double"},
+    {"name": "extRewards", "type": "double"},
+    {"name": "extTransAdjustment", "type": "double"}
+  ]
+}
