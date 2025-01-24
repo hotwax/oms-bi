@@ -144,7 +144,6 @@ under the License.
         <field name="returnQuantity" type="number-decimal"/>
         <field name="receivedByUserLogin" type="id-long"/>
         <field name="returnShipmentId" type="id"/>
-
         <field name="productId" type="id"/>
         <field name="orderId" type="id"/>
         <field name="orderItemSeqId" type="id"/>
@@ -167,6 +166,13 @@ under the License.
         <field name="comments" type="text-very-long"/>
         <field name="description" type="text-medium"/>
         <field name="amount" type="currency-amount"/>
+        <field name="returnTypeId" type="id"/>
+        <field name="destinationFacilityId" type="id"/>
+        <field name="employeeId" type="id"/>
+        <field name="createdByUserLogin" type="id-long"/>
+        <field name="returnChannelEnumId" type="id"/>
+        <field name="returnStatusId" type="id"/>
+        <field name="returnRefundedTotal" type="currency-precise"/>
         <relationship type="one-nofk" related="co.hotwax.bi.fact.OrderItemFulfillmentFact">
             <key-map field-name="orderId"/>
         </relationship>
