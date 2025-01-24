@@ -124,6 +124,7 @@ under the License.
         <field name="externalReturnId" type="id"/>
         <field name="dataSourceId" type="text-short"/>
         <field name="returnDate" type="date-time"/>
+        <field name="returnEntryDate" type="date-time"/>
         <field name="returnTypeId" type="id"/>
         <field name="returnStatusId" type="id"/>
         <field name="returnRefundedTotal" type="currency-amount"/>
@@ -162,6 +163,7 @@ under the License.
         <field name="externalReturnId" type="id"/>
         <field name="dataSourceId" type="text-short"/>
         <field name="returnDate" type="date-time"/>
+        <field name="returnEntryDate" type="date-time"/>
         <field name="orderId" type="id"/>
         <field name="comments" type="text-very-long"/>
         <field name="description" type="text-medium"/>
