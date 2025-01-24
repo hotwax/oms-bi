@@ -51,6 +51,14 @@ SELECT
       AND ra.RETURN_ADJUSTMENT_TYPE_ID = 'RET_SALES_TAX_ADJ'
       AND ra.RETURN_TYPE_ID = 'RTN_REFUND'
   ) totalTaxRefundAmt,
+  (
+    SELECT SUM(ra.AMOUNT)
+    FROM return_adjustment ra
+    WHERE ra.RETURN_ID = ri.RETURN_ID
+      AND ra.RETURN_ITEM_SEQ_ID = "_NA_"
+      AND ra.RETURN_ADJUSTMENT_TYPE_ID = 'RET_SHIPPING_ADJ'
+      AND ra.RETURN_TYPE_ID = 'RTN_REFUND'
+  ) returnShippingAmt,
   DATE_FORMAT(rs.STATUS_DATETIME, "%Y-%m-%d %H:%i:%s") returnItemCompletedDate,
   DATE_FORMAT(rs1.STATUS_DATETIME, "%Y-%m-%d %H:%i:%s") returnItemReceivedDate,
   rs1.CHANGE_BY_USER_LOGIN_ID receivedByUserLogin,

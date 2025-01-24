@@ -22,6 +22,7 @@
     { "name": "returnPrice", "type": "double" },
     { "name": "returnDiscountAmt", "type": "double" },
     { "name": "totalTaxRefundAmt", "type": "double" },
+    { "name": "returnShippingAmt", "type": "double" },
     { "name": "returnItemDescription", "type": "string" },
     { "name": "returnItemTypeId", "type": "string" },
     { "name": "returnReasonId", "type": "string" },
