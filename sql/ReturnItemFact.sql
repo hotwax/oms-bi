@@ -12,12 +12,12 @@ SELECT
   rh.EMPLOYEE_ID employeeId,
   rh.CREATED_BY createdByUserLogin,
   rh.RETURN_CHANNEL_ENUM_ID returnChannelEnumId,
-  ri.RETURN_REASON_ID,
-  ri.RECEIVED_QUANTITY,
-  ri.RETURN_QUANTITY,
-  ri.ORDER_ID,
-  ri.ORDER_ITEM_SEQ_ID,
-  ri.PRODUCT_ID,
+  ri.RETURN_REASON_ID returnReasonId,
+  ri.RECEIVED_QUANTITY receivedQuantity,
+  ri.RETURN_QUANTITY returnQuantity,
+  ri.ORDER_ID orderId,
+  ri.ORDER_ITEM_SEQ_ID orderItemSeqId,
+  ri.PRODUCT_ID productId,
   (
     SELECT rtni.ID_VALUE
     FROM return_identification rtni
@@ -26,7 +26,7 @@ SELECT
       AND (thru_date > NOW() OR thru_date IS NULL)
   ) externalReturnId,
   "SHOPIFY" dataSourceId,
-  ris.SHIPMENT_ID shipmentId,
+  ris.SHIPMENT_ID returnShipmentId,
   (
     SELECT SUM(opp.MAX_AMOUNT)
     FROM return_item_response ris

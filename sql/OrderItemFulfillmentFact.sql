@@ -10,6 +10,7 @@ from
       oh.ORDER_ID AS `orderId`,
       oi.ORDER_ITEM_SEQ_ID AS `orderItemSeqId`,
       oh.EXTERNAL_ID AS `externalId`,
+      oi.EXTERNAL_ID AS `itemExternalId`,
       oh.ORDER_NAME AS `orderName`,
       oh.ORDER_TYPE_ID AS `orderTypeId`,
       oh.PRODUCT_STORE_ID AS `productStoreId`,
