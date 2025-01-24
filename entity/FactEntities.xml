@@ -24,6 +24,7 @@ under the License.
         <field name="orderId" type="id" />
         <field name="orderItemSeqId" type="id" />
         <field name="externalId" type="text-short"/>
+        <field name="itemExternalId" type="id-long"/>
         <field name="orderName" type="text-short"/>
         <field name="orderTypeId" type="id"/>
         <field name="productStoreId" type="id"/>
@@ -86,6 +87,96 @@ under the License.
         </relationship>
         <relationship type="one-nofk" related="moqui.olap.DateDayDimension">
             <key-map field-name="itemCancelledDateDimId" related="dateValue"/>
+        </relationship>
+    </entity>
+
+    <entity entity-name="OrderAdjustmentFact" package="co.hotwax.bi.fact" group="analytical">
+        <field name="orderAdjustmentFactId" type="id" is-pk="true"/>
+        <field name="orderId" type="id"/>
+        <field name="orderItemSeqId" type="id"/>
+
+        <!-- Adjustment fields containing amount value -->
+        <field name="shippingCharges" type="currency-amount"/>
+        <field name="shippingSalesTax" type="currency-amount"/>
+        <field name="extShipAdjustment" type="currency-amount"/>
+        <field name="extPriceOverride" type="currency-amount"/>
+        <field name="extFeesAdjustment" type="currency-amount"/>
+        <field name="extRewards" type="currency-amount"/>
+        <field name="extTransAdjustment" type="currency-amount"/>
+        <!-- <field name="extPromoAdjustment" type="currency-amount"/> -->
+        <!-- <field name="salesTax" type="currency-amount"/> -->
+
+        <relationship type="one-nofk" related="co.hotwax.bi.fact.OrderItemFulfillmentFact">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </relationship>
+
+        <index name="IDX_OAF_ITEM">
+            <index-field name="orderId"/>
+            <index-field name="orderItemSeqId"/>
+        </index>
+    </entity>
+    
+    <entity entity-name="ReturnItemFact" package="co.hotwax.bi.fact">
+        <field name="returnItemFactId" type="id" is-pk="true"/>
+        <field name="returnId" type="id"/>
+        <field name="returnItemSeqId" type="id"/>
+        <field name="externalReturnId" type="id"/>
+        <field name="dataSourceId" type="text-short"/>
+        <field name="returnDate" type="date-time"/>
+        <field name="returnEntryDate" type="date-time"/>
+        <field name="returnTypeId" type="id"/>
+        <field name="returnStatusId" type="id"/>
+        <field name="returnRefundedTotal" type="currency-amount"/>
+        <field name="destinationFacilityId" type="id"/>
+        <field name="employeeId" type="id"/>
+        <field name="createdByUserLogin" type="id-long"/>
+        <field name="returnChannelEnumId" type="id"/>
+        <field name="returnItemStatusId" type="id"/>
+        <field name="returnItemReceivedDate" type="date-time"/>
+        <field name="returnItemCompletedDate" type="date-time"/>
+        <field name="returnPrice" type="currency-amount"/>
+        <field name="returnDiscountAmt" type="currency-amount"/>
+        <field name="totalTaxRefundAmt" type="currency-amount"/>
+        <field name="returnItemDescription" type="text-long"/>
+        <field name="returnItemTypeId" type="id"/>
+        <field name="returnReasonId" type="id"/>
+        <field name="receivedQuantity" type="number-decimal"/>
+        <field name="returnQuantity" type="number-decimal"/>
+        <field name="receivedByUserLogin" type="id-long"/>
+        <field name="returnShipmentId" type="id"/>
+        <field name="productId" type="id"/>
+        <field name="orderId" type="id"/>
+        <field name="orderItemSeqId" type="id"/>
+
+        <relationship type="one-nofk" related="co.hotwax.bi.fact.OrderItemFulfillmentFact">
+            <key-map field-name="orderId"/>
+            <key-map field-name="orderItemSeqId"/>
+        </relationship>
+        <relationship type="one-nofk" related="co.hotwax.bi.dimension.FacilityDimension"/>
+        <relationship type="one-nofk" related="co.hotwax.bi.dimension.ProductDimension"/>
+    </entity>
+    
+    <entity entity-name="AppeasementFact" package="co.hotwax.bi.fact">
+        <field name="appeasementFactId" type="id" is-pk="true"/>
+        <field name="returnId" type="id"/>
+        <field name="externalReturnId" type="id"/>
+        <field name="dataSourceId" type="text-short"/>
+        <field name="returnDate" type="date-time"/>
+        <field name="returnEntryDate" type="date-time"/>
+        <field name="orderId" type="id"/>
+        <field name="comments" type="text-very-long"/>
+        <field name="description" type="text-medium"/>
+        <field name="amount" type="currency-amount"/>
+        <field name="returnTypeId" type="id"/>
+        <field name="destinationFacilityId" type="id"/>
+        <field name="employeeId" type="id"/>
+        <field name="createdByUserLogin" type="id-long"/>
+        <field name="returnChannelEnumId" type="id"/>
+        <field name="returnStatusId" type="id"/>
+        <field name="returnRefundedTotal" type="currency-precise"/>
+        <relationship type="one-nofk" related="co.hotwax.bi.fact.OrderItemFulfillmentFact">
+            <key-map field-name="orderId"/>
         </relationship>
     </entity>
 </entities>

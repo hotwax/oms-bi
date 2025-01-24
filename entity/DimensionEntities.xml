@@ -53,5 +53,13 @@ under the License.
         <field name="postalCode" type="text-short"/>
         <field name="address1" type="text-medium"/>
     </entity>
+
+    <entity entity-name="EnumerationDimension" package="co.hotwax.bi.dimension" group="analytical">
+        <field name="enumId" type="id" is-pk="true"/>
+        <field name="enumTypeId" type="id"/>
+        <field name="enumCode" type="text-medium"/>
+        <field name="description" type="text-long"/>
+        <field name="enumName" type="text-medium"/>
+    </entity>
 </entities>
 
