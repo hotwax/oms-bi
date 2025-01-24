@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "AppeasementFact",
+  "namespace": "co.hotwax.bi.fact",
+  "fields": [
+    { "name": "returnId", "type": "string" },
+    { "name": "externalReturnId", "type": "string" },
+    { "name": "dataSourceId", "type": "string" },
+    { "name": "returnDate", "type": "long", "logicalType": "timestamp-millis" },
+    { "name": "returnEntryDate", "type": "long", "logicalType": "timestamp-millis" },
+    { "name": "orderId", "type": "string" },
+    { "name": "comments", "type": "string" },
+    { "name": "description", "type": "string" },
+    { "name": "amount", "type": "double" },
+    { "name": "returnTypeId", "type": "string" },
+    { "name": "destinationFacilityId", "type": "string" },
+    { "name": "employeeId", "type": "string" },
+    { "name": "createdByUserLogin", "type": "long" },
+    { "name": "returnChannelEnumId", "type": "string" },
+    { "name": "returnStatusId", "type": "string" },
+    { "name": "returnRefundedTotal", "type": "double" }
+  ]
+}
