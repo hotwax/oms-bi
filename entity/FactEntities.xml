@@ -117,7 +117,7 @@ under the License.
         </index>
     </entity>
     
-    <entity entity-name="ReturnItemFact" package="co.hotwax.bi.fact">
+    <entity entity-name="ReturnItemFact" package="co.hotwax.bi.fact" group="analytical">
         <field name="returnItemFactId" type="id" is-pk="true"/>
         <field name="returnId" type="id"/>
         <field name="returnItemSeqId" type="id"/>
@@ -158,7 +158,7 @@ under the License.
         <relationship type="one-nofk" related="co.hotwax.bi.dimension.ProductDimension"/>
     </entity>
     
-    <entity entity-name="AppeasementFact" package="co.hotwax.bi.fact">
+    <entity entity-name="AppeasementFact" package="co.hotwax.bi.fact" group="analytical">
         <field name="appeasementFactId" type="id" is-pk="true"/>
         <field name="returnId" type="id"/>
         <field name="externalReturnId" type="id"/>
