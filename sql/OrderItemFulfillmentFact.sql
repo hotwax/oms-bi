@@ -70,6 +70,9 @@ from
           and oa.order_item_seq_id = oi.order_item_seq_id
           and oa.order_adjustment_type_id = "SALES_TAX"
       ) AS `itemTaxAmount`,
+      oh.PRIORITY AS `priority`,
+      oh.GRAND_TOTAL AS `grandTotal`,
+      oh.CURRENCY_UOM AS `currencyUomId`,
       date_format(os.created_tx_stamp, "%Y-%m-%d %H:%i:%s.%f") AS `cursorDateStrFormatted`,
       os.created_tx_stamp cursorDate
     from

@@ -70,6 +70,9 @@ under the License.
         <field name="itemDiscPerUnit" type="currency-amount"/>
         <field name="fulfilledByUserLoginId" type="id"/>
         <field name="itemTaxAmount" type="currency-amount"/>
+        <field name="priority" type="text-indicator"/>
+        <field name="grandTotal" type="currency-amount"/>
+        <field name="currencyUomId" type="id"/>
         <relationship type="one-nofk" related="co.hotwax.bi.dimension.FacilityDimension">
             <key-map field-name="facilityId"/>
         </relationship>
