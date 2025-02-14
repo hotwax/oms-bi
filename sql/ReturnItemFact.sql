@@ -68,7 +68,7 @@ SELECT
   oh.EXTERNAL_ID AS externalId,
   oh.SALES_CHANNEL_ENUM_ID AS salesChannelEnumId,
   DATE_FORMAT(oh.ORDER_DATE, "%Y-%m-%d %H:%i:%s") AS orderDate,
-  DATE_FORMAT(oh.ENTRY_DATE, "%Y-%m-%d %H:%i:%s") AS ordEntryDate,
+  DATE_FORMAT(oh.ENTRY_DATE, "%Y-%m-%d %H:%i:%s") AS orderEntryDate,
   oh.PRIORITY AS priority,
   oh.CURRENCY_UOM AS currencyUomId,
   oh.ORIGIN_FACILITY_ID AS orderOriginFacilityId,
