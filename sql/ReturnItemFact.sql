@@ -94,8 +94,8 @@ LEFT JOIN (
   FROM order_contact_mech ocm
   WHERE ocm.CONTACT_MECH_PURPOSE_TYPE_ID = "SHIPPING_LOCATION"
   group by ocm.order_id
-) ocm on ocm.order_id = ri.order_id
-LEFT JOIN postal_address pa ON pa.CONTACT_MECH_ID = ocm.CONTACT_MECH_ID
+) ocm1 on ocm1.order_id = ri.order_id
+LEFT JOIN postal_address pa ON pa.CONTACT_MECH_ID = ocm1.CONTACT_MECH_ID
 LEFT JOIN return_status rs1 ON rs1.RETURN_ID = ri.RETURN_ID
     AND rs1.RETURN_ITEM_SEQ_ID = ri.RETURN_ITEM_SEQ_ID
     AND rs1.STATUS_ID = "RETURN_RECEIVED"
