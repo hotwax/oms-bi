@@ -206,7 +206,7 @@ under the License.
         <field name="externalId" type="text-short"/>
         <field name="salesChannelEnumId" type="id"/>
         <field name="orderDate" type="date-time"/>
-        <field name="ordEntryDate" type="date-time"/>
+        <field name="orderEntryDate" type="date-time"/>
         <field name="priority" type="text-indicator"/>
         <field name="currencyUomId" type="id"/>
         <field name="orderOriginFacilityId" type="id"/>
