@@ -32,6 +32,24 @@
     { "name": "returnShipmentId", "type": "string" },
     { "name": "productId", "type": "string" },
     { "name": "orderId", "type": "string" },
-    { "name": "orderItemSeqId", "type": "string" }
+    { "name": "orderItemSeqId", "type": "string" },
+    { "name": "orderTypeId", "type": "string" },
+    { "name": "orderName", "type": "string" },
+    { "name": "externalId", "type": "string" },
+    { "name": "salesChannelEnumId", "type": "string" },
+    { "name": "orderDate", "type": "long", "logicalType": "timestamp-millis" },
+    { "name": "ordEntryDate", "type": "long", "logicalType": "timestamp-millis" },
+    { "name": "priority", "type": "string" },
+    { "name": "currencyUomId", "type": "string" },
+    { "name": "orderOriginFacilityId", "type": "string" },
+    { "name": "productStoreId", "type": "string" },
+    { "name": "grandTotal", "type": "double" },
+    { "name": "orderOrgCity", "type": "string" },
+    { "name": "orderOrgPostalCode", "type": "string" },
+    { "name": "orderOrgCountryGeoId", "type": "string" },
+    { "name": "orderOrgStateProvinceGeoId", "type": "string" },
+    { "name": "orderOrgMunicipalityGeoId", "type": "string" },
+    { "name": "orderOrgLongitude", "type": "float" },
+    { "name": "orderOrgLatitude", "type": "float" }
   ]
 }

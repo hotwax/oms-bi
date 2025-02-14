@@ -153,6 +153,26 @@ under the License.
         <field name="orderId" type="id"/>
         <field name="orderItemSeqId" type="id"/>
 
+        <!-- Order Details -->
+        <field name="orderTypeId" type="id"/>
+        <field name="orderName" type="text-short"/>
+        <field name="externalId" type="text-short"/>
+        <field name="salesChannelEnumId" type="id"/>
+        <field name="orderDate" type="date-time"/>
+        <field name="ordEntryDate" type="date-time"/>
+        <field name="priority" type="text-indicator"/>
+        <field name="currencyUomId" type="id"/>
+        <field name="orderOriginFacilityId" type="id"/>
+        <field name="productStoreId" type="id"/>
+        <field name="grandTotal" type="currency-amount"/>
+        <field name="orderOrgCity" type="text-medium"/>
+        <field name="orderOrgPostalCode" type="text-short"/>
+        <field name="orderOrgCountryGeoId" type="id"/>
+        <field name="orderOrgStateProvinceGeoId" type="id"/>
+        <field name="orderOrgMunicipalityGeoId" type="id"/>
+        <field name="orderOrgLongitude" type="number-float"/>
+        <field name="orderOrgLatitude" type="number-float"/>
+
         <relationship type="one-nofk" related="co.hotwax.bi.fact.OrderItemFulfillmentFact">
             <key-map field-name="orderId"/>
             <key-map field-name="orderItemSeqId"/>
