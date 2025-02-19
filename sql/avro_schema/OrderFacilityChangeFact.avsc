@@ -1,0 +1,32 @@
+// NOTE: The field names in uppercase to make them similar to actual fields created in the database
+
+{
+  "type": "record",
+  "name": "OrderFacilityChangeFact",
+  "namespace": "co.hotwax.bi.fact",
+  "fields": [
+    { "name": "ORDER_FACILITY_CHANGE_FACT_ID", "type": "string" },
+    { "name": "ORDER_FACILITY_CHANGE_ID", "type": "string" },
+    { "name": "ORDER_ID", "type": "string" },
+    { "name": "ORDER_ITEM_SEQ_ID", "type": "string" },
+    { "name": "PRODUCT_STORE_ID", "type": "string" },
+    { "name": "SHIPMENT_METHOD_TYPE_ID", "type": "string" },
+    { "name": "FROM_FACILITY_ID", "type": "string" },
+    { "name": "FACILITY_ID", "type": "string" },
+    { "name": "CHANGE_DATETIME", "type": { "type": "long", "logicalType": "timestamp-millis" }},
+    { "name": "CHANGE_REASON_ENUM_ID", "type": "string" },
+    { "name": "COMMENTS", "type": "string" },
+    { "name": "CHANGE_USER_LOGIN", "type": "long" },
+    { "name": "ORDER_ROUTING_ID", "type": "string" },
+    { "name": "ORDER_ROUTING_NAME", "type": "string" },
+    { "name": "ROUTING_RUN_ID", "type": "string" },
+    { "name": "ROUTING_RULE", "type": "string" },
+    { "name": "ROUTING_RULE_ID", "type": "string" },
+    { "name": "ROUTING_RULE_NAME", "type": "string" },
+    { "name": "ROUTING_GROUP_ID", "type": "string" },
+    { "name": "ROUTING_GROUP_NAME", "type": "string" },
+    { "name": "ROUTING_BATCH_ID", "type": "string" },
+    { "name": "ROUTER_USER_LOGIN", "type": "string" },
+    { "name": "ASSIGNMENT_ENUM_ID", "type": "string" }
+  ]
+}
