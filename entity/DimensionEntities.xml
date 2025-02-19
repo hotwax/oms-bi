@@ -61,5 +61,14 @@ under the License.
         <field name="description" type="text-long"/>
         <field name="enumName" type="text-medium"/>
     </entity>
+
+    <entity entity-name="EnumerationDimensionUuid" package="co.hotwax.bi.dimension" group="analytical">
+        <field name="dimensionId" type="id" is-pk="true" />
+        <field name="enumId" type="id"/>
+        <field name="enumTypeId" type="id"/>
+        <field name="enumCode" type="text-medium"/>
+        <field name="description" type="text-long"/>
+        <field name="enumName" type="text-medium"/>
+    </entity>
 </entities>
 
