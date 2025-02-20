@@ -222,7 +222,7 @@ under the License.
     </entity>
 
     <entity entity-name="OrderFacilityChangeFact" package="co.hotwax.bi.fact" group="analytical">
-        <field name="orderFactilityChangeFactId" type="id" is-pk="true"/>
+        <field name="orderFacilityChangeFactId" type="id" is-pk="true"/>
         <field name="orderFacilityChangeId" type="id"/>
         <field name="orderId" type="id"/>
         <field name="orderItemSeqId" type="id"/>
