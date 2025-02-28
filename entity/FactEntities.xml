@@ -250,15 +250,15 @@ under the License.
 
 <entity entity-name="OrderSalesAgreement" package="co.hotwax.bi.fact" group="analytical">
         <field name="orderSalesAgreementId" type="id" is-pk="true"/>
-        <field name="orderId" type="text-medium"/>
+        <field name="orderId" type="id"/>
         <field name="orderName" type="text-short"/>
-        <field name="agreementId" type="text-medium"/>
+        <field name="agreementId" type="id"/>
         <field name="reason" type="id"/>
         <field name="actionType" type="id"/>
         <field name="lineType" type="id"/>
         <field name="quantity" type="number-integer"/>
         <field name="totalAmount" type="currency-amount"/>
-        <field name="staffId" type="id"/>
-        <field name="name" type="text-short"/>
-        <field name="email" type="text-medium"/>
+        <field name="userId" type="id"/>
+        <field name="firstName" type="text-short"/>
+        <field name="lastName" type="text-short"/>
     </entity>
