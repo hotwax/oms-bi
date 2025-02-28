@@ -246,9 +246,8 @@ under the License.
         <field name="routerUserLogin" type="id"/>
         <field name="assignmentEnumId" type="id"/>
     </entity>
-</entities>
-
-<entity entity-name="OrderSalesAgreement" package="co.hotwax.bi.fact" group="analytical">
+    
+    <entity entity-name="OrderSalesAgreement" package="co.hotwax.bi.fact" group="analytical">
         <field name="orderSalesAgreementId" type="id" is-pk="true"/>
         <field name="orderId" type="id"/>
         <field name="orderName" type="text-short"/>
@@ -262,3 +261,4 @@ under the License.
         <field name="firstName" type="text-short"/>
         <field name="lastName" type="text-short"/>
     </entity>
+</entities>
