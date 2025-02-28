@@ -247,3 +247,18 @@ under the License.
         <field name="assignmentEnumId" type="id"/>
     </entity>
 </entities>
+
+<entity entity-name="OrderSalesAgreement" package="co.hotwax.bi.fact" group="analytical">
+        <field name="orderSalesAgreementId" type="id" is-pk="true"/>
+        <field name="orderId" type="text-medium"/>
+        <field name="orderName" type="text-short"/>
+        <field name="agreementId" type="text-medium"/>
+        <field name="reason" type="id"/>
+        <field name="actionType" type="id"/>
+        <field name="lineType" type="id"/>
+        <field name="quantity" type="number-integer"/>
+        <field name="totalAmount" type="currency-amount"/>
+        <field name="staffId" type="id"/>
+        <field name="name" type="text-short"/>
+        <field name="email" type="text-medium"/>
+    </entity>
