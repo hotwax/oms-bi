@@ -257,6 +257,9 @@ under the License.
         <field name="lineType" type="id"/>
         <field name="quantity" type="number-integer"/>
         <field name="totalAmount" type="currency-amount"/>
+        <field name="totalTaxAmount" type="currency-amount"/>
+        <field name="totalDiscountBeforeTaxes" type="currency-amount"/>
+        <field name="totalDiscountAfterTaxes" type="currency-amount"/>
         <field name="userId" type="id"/>
         <field name="firstName" type="text-short"/>
         <field name="lastName" type="text-short"/>
