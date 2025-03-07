@@ -62,6 +62,7 @@ under the License.
         <field name="shipmentApprovedDate" type="date-time"/>
         <field name="shipmentPackedDate" type="date-time"/>
         <field name="shipmentShippedDate" type="date-time"/>
+        <field name="orderFacilityId" type="id"/>
         <field name="originFacilityId" type="id"/>
         <field name="destFacilityId" type="id"/>
         <field name="actualCarrierCode" type="id"/>
@@ -245,5 +246,24 @@ under the License.
         <field name="routingBatchId" type="id"/>
         <field name="routerUserLogin" type="id"/>
         <field name="assignmentEnumId" type="id"/>
+    </entity>
+    
+    <entity entity-name="OrderSalesAgreement" package="co.hotwax.bi.fact" group="analytical">
+        <field name="orderSalesAgreementId" type="id" is-pk="true"/>
+        <field name="orderId" type="id"/>
+        <field name="orderName" type="text-short"/>
+        <field name="agreementId" type="id"/>
+        <field name="reason" type="id"/>
+        <field name="actionType" type="id"/>
+        <field name="lineType" type="id"/>
+        <field name="quantity" type="number-integer"/>
+        <field name="totalAmount" type="currency-amount"/>
+        <field name="totalTaxAmount" type="currency-amount"/>
+        <field name="totalDiscountBeforeTaxes" type="currency-amount"/>
+        <field name="totalDiscountAfterTaxes" type="currency-amount"/>
+        <field name="userId" type="id"/>
+        <field name="firstName" type="text-short"/>
+        <field name="lastName" type="text-short"/>
+        <field name="happenedAt" type="date-time"/>
     </entity>
 </entities>
