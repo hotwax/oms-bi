@@ -253,6 +253,7 @@ under the License.
         <field name="orderId" type="id"/>
         <field name="orderName" type="text-short"/>
         <field name="agreementId" type="id"/>
+        <field name="handle" type="text-short"/>
         <field name="reason" type="id"/>
         <field name="actionType" type="id"/>
         <field name="lineType" type="id"/>
