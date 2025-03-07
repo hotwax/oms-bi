@@ -253,6 +253,7 @@ under the License.
         <field name="orderId" type="id"/>
         <field name="orderName" type="text-short"/>
         <field name="agreementId" type="id"/>
+        <field name="handle" type="text-short"/>
         <field name="reason" type="id"/>
         <field name="actionType" type="id"/>
         <field name="lineType" type="id"/>
@@ -262,8 +263,8 @@ under the License.
         <field name="totalDiscountBeforeTaxes" type="currency-amount"/>
         <field name="totalDiscountAfterTaxes" type="currency-amount"/>
         <field name="userId" type="id"/>
-        <field name="firstName" type="text-short"/>
-        <field name="lastName" type="text-short"/>
+        <field name="firstName" type="text-medium"/>
+        <field name="lastName" type="text-medium"/>
         <field name="happenedAt" type="date-time"/>
     </entity>
 </entities>
