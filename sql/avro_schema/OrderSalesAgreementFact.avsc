@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "OrderSalesAgreement",
+  "namespace": "co.hotwax.bi.fact",
+  "fields": [
+    { "name": "orderId", "type": "string" },
+    { "name": "orderName", "type": "string" },
+    { "name": "agreementId", "type": "string" },
+    { "name": "handle", "type": "string" },
+    { "name": "reason", "type": "string" },
+    { "name": "actionType", "type": "string" },
+    { "name": "lineType", "type": "string" },
+    { "name": "quantity", "type": "int" },
+    { "name": "totalAmount", "type": "double" },
+    { "name": "totalTaxAmount", "type": "double" },
+    { "name": "totalDiscountBeforeTaxes", "type": "double" },
+    { "name": "totalDiscountAfterTaxes", "type": "double" },
+    { "name": "lastName", "type": "string" },
+    { "name": "firstName", "type": "string" },
+    { "name": "userId", "type": "string" },
+    { "name": "happenedAt", "type": "string" }
+  ]
+}
