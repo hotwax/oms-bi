@@ -46,6 +46,7 @@ from
       dpa.LONGITUDE AS `destLongitude`,
       srs.TRACKING_ID_NUMBER AS `trackingIdNumber`,
       s.SHIPMENT_ID AS `shipmentId`,
+      oh.ORIGIN_FACILITY_ID AS `orderOriginFacilityId`,
       srs.ORIGIN_FACILITY_ID AS `originFacilityId`,
       srs.DEST_FACILITY_ID AS `destFacilityId`,
       srs.ACTUAL_CARRIER_CODE AS `actualCarrierCode`,

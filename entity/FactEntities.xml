@@ -62,7 +62,7 @@ under the License.
         <field name="shipmentApprovedDate" type="date-time"/>
         <field name="shipmentPackedDate" type="date-time"/>
         <field name="shipmentShippedDate" type="date-time"/>
-        <field name="orderFacilityId" type="id"/>
+        <field name="orderOriginFacilityId" type="id"/>
         <field name="originFacilityId" type="id"/>
         <field name="destFacilityId" type="id"/>
         <field name="actualCarrierCode" type="id"/>
