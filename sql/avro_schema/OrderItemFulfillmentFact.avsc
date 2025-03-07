@@ -43,6 +43,7 @@
     {"name": "shipmentApprovedDate", "type": {"type": "long", "logicalType": "timestamp-millis"}},
     {"name": "shipmentPackedDate", "type": {"type": "long", "logicalType": "timestamp-millis"}},
     {"name": "shipmentShippedDate", "type": {"type": "long", "logicalType": "timestamp-millis"}},
+    {"name": "orderOriginFacilityId", "type": "string"},
     {"name": "originFacilityId", "type": "string"},
     {"name": "destFacilityId", "type": "string"},
     {"name": "actualCarrierCode", "type": "string"},
