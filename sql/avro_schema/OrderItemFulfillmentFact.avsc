@@ -6,6 +6,7 @@
     {"name": "orderId", "type": "string"},
     {"name": "orderItemSeqId", "type": "string"},
     {"name": "externalId", "type": "string"},
+    {"name": "itemExternalId", "type": "string"},
     {"name": "orderName", "type": "string"},
     {"name": "orderTypeId", "type": "string"},
     {"name": "productStoreId", "type": "string"},
@@ -50,6 +51,8 @@
     {"name": "actualCost", "type": "double"},
     {"name": "pickerPartyId", "type": "string"},
     {"name": "itemDiscPerUnit", "type": "double"},
+    {"name": "fulfilledByUserLoginId", "type": "string"},
+    {"name": "itemTaxAmount", "type": "double"},
     {"name": "priority", "type": "string"}
   ]
 }
