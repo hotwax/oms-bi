@@ -5,7 +5,7 @@
   "name": "OrderFacilityChangeFact",
   "namespace": "co.hotwax.bi.fact",
   "fields": [
-    { "name": "ORDER_FACILITY_CHANGE_FACT_ID", "type": "string" },
+    { "name": "ORDER_FACILITY_CHANGE_FACT_ID", "type": "string", "aliases": ["PRIMARY_KEY"] },
     { "name": "ORDER_FACILITY_CHANGE_ID", "type": "string" },
     { "name": "ORDER_ID", "type": "string" },
     { "name": "ORDER_ITEM_SEQ_ID", "type": "string" },
