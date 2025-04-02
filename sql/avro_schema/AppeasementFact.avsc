@@ -3,6 +3,7 @@
   "name": "AppeasementFact",
   "namespace": "co.hotwax.bi.fact",
   "fields": [
+    { "name": "APPEASEMENT_FACT_ID", "type": "string", "aliases": ["PRIMARY_KEY"] },
     { "name": "RETURN_ID", "type": "string" },
     { "name": "EXTERNAL_RETURN_ID", "type": "string" },
     { "name": "DATA_SOURCE_ID", "type": "string" },
