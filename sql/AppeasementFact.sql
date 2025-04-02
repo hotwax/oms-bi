@@ -1,25 +1,25 @@
 SELECT
-  rh.RETURN_ID returnId,
+  rh.RETURN_ID AS `RETURN_ID`,
   (
     SELECT rtni.ID_VALUE
     FROM return_identification rtni
     WHERE rtni.RETURN_ID = rh.RETURN_ID
       AND rtni.RETURN_IDENTIFICATION_TYPE_ID = "SHOPIFY_RTN_ID"
       AND (rtni.THRU_DATE > NOW() OR rtni.THRU_DATE IS NULL)
-  ) externalReturnId,
-  "SHOPIFY" dataSourceId,
-  DATE_FORMAT(rh.RETURN_DATE, "%Y-%m-%d %H:%i:%s") returnDate,
-  DATE_FORMAT(rh.ENTRY_DATE, "%Y-%m-%d %H:%i:%s") returnEntryDate,
-  ra.ORDER_ID orderId,
-  ra.COMMENTS comments,
-  ra.DESCRIPTION description,
-  ra.AMOUNT amount,
-  rh.RETURN_HEADER_TYPE_ID returnTypeId,
-  rh.DESTINATION_FACILITY_ID destinationFacilityId,
-  rh.EMPLOYEE_ID employeeId,
-  rh.CREATED_BY createdByUserLogin,
-  rh.RETURN_CHANNEL_ENUM_ID returnChannelEnumId,
-  rh.STATUS_ID returnStatusId,
+  ) AS `EXTERNAL_RETURN_ID`,
+  "SHOPIFY" AS `DATA_SOURCE_ID`,
+  DATE_FORMAT(rh.RETURN_DATE, "%Y-%m-%d %H:%i:%s") AS `RETURN_DATE`,
+  DATE_FORMAT(rh.ENTRY_DATE, "%Y-%m-%d %H:%i:%s") AS `RETURN_ENTRY_DATE`,
+  ra.ORDER_ID AS `ORDER_ID`,
+  ra.COMMENTS AS `COMMENTS`,
+  ra.DESCRIPTION AS `DESCRIPTION`,
+  ra.AMOUNT AS `AMOUNT`,
+  rh.RETURN_HEADER_TYPE_ID AS `RETURN_TYPE_ID`,
+  rh.DESTINATION_FACILITY_ID AS `DESTINATION_FACILITY_ID`,
+  rh.EMPLOYEE_ID AS `EMPLOYEE_ID`,
+  rh.CREATED_BY AS `CREATED_BY_USER_LOGIN`,
+  rh.RETURN_CHANNEL_ENUM_ID AS `RETURN_CHANNEL_ENUM_ID`,
+  rh.STATUS_ID AS `RETURN_STATUS_ID`,
   (
     SELECT SUM(opp.MAX_AMOUNT)
     FROM return_item_response ris
@@ -27,24 +27,24 @@ SELECT
     WHERE ris.RETURN_ID = rh.RETURN_ID
       AND ris.RETURN_ITEM_SEQ_ID = "_NA_"
       AND opp.STATUS_ID = "PAYMENT_REFUNDED"
-  ) returnRefundedTotal,
-  oh.ORDER_TYPE_ID AS orderTypeId,
-  oh.ORDER_NAME AS orderName,
-  oh.EXTERNAL_ID AS externalId,
-  oh.SALES_CHANNEL_ENUM_ID AS salesChannelEnumId,
-  DATE_FORMAT(oh.ORDER_DATE, "%Y-%m-%d %H:%i:%s") AS orderDate,
-  DATE_FORMAT(oh.ENTRY_DATE, "%Y-%m-%d %H:%i:%s") AS orderEntryDate,
-  oh.PRIORITY AS priority,
-  oh.ORIGIN_FACILITY_ID AS orderOriginFacilityId,
-  oh.PRODUCT_STORE_ID AS productStoreId,
-  pa.CITY AS orderOrgCity,
-  pa.POSTAL_CODE AS orderOrgPostalCode,
-  pa.COUNTRY_GEO_ID AS orderOrgCountryGeoId,
-  pa.STATE_PROVINCE_GEO_ID AS orderOrgStateProvinceGeoId,
-  pa.MUNICIPALITY_GEO_ID AS orderOrgMunicipalityGeoId,
-  pa.LONGITUDE AS orderOrgLongitude,
-  pa.LATITUDE AS orderOrgLatitude,
-  rh.CREATED_TX_STAMP cursorDate
+  ) AS `RETURN_REFUNDED_TOTAL`,
+  oh.ORDER_TYPE_ID AS `ORDER_TYPE_ID`,
+  oh.ORDER_NAME AS `ORDER_NAME`,
+  oh.EXTERNAL_ID AS `EXTERNAL_ID`,
+  oh.SALES_CHANNEL_ENUM_ID AS `SALES_CHANNEL_ENUM_ID`,
+  DATE_FORMAT(oh.ORDER_DATE, "%Y-%m-%d %H:%i:%s") AS `ORDER_DATE`,
+  DATE_FORMAT(oh.ENTRY_DATE, "%Y-%m-%d %H:%i:%s") AS `ORDER_ENTRY_DATE`,
+  oh.PRIORITY AS `PRIORITY`,
+  oh.ORIGIN_FACILITY_ID AS `ORDER_ORIGIN_FACILITY_ID`,
+  oh.PRODUCT_STORE_ID AS `PRODUCT_STORE_ID`,
+  pa.CITY AS `ORDER_ORG_CITY`,
+  pa.POSTAL_CODE AS `ORDER_ORG_POSTAL_CODE`,
+  pa.COUNTRY_GEO_ID AS `ORDER_ORG_COUNTRY_GEO_ID`,
+  pa.STATE_PROVINCE_GEO_ID AS `ORDER_ORG_STATE_PROVINCE_GEO_ID`,
+  pa.MUNICIPALITY_GEO_ID AS `ORDER_ORG_MUNICIPALITY_GEO_ID`,
+  pa.LONGITUDE AS `ORDER_ORG_LONGITUDE`,
+  pa.LATITUDE AS `ORDER_ORG_LATITUDE`,
+  rh.CREATED_TX_STAMP AS 'cursorDate'
 FROM return_header rh
 JOIN return_adjustment ra ON ra.RETURN_ID = rh.RETURN_ID AND ra.RETURN_ADJUSTMENT_TYPE_ID = "APPEASEMENT"
 LEFT JOIN order_header oh ON oh.ORDER_ID = ra.ORDER_ID
