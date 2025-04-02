@@ -3,14 +3,14 @@
   "name": "OrderAdjustmentFact",
   "namespace": "co.hotwax.bi.fact",
   "fields": [
-    {"name": "orderId", "type": "string"},
-    {"name": "orderItemSeqId", "type": "string"},
-    {"name": "shippingCharges", "type": "double"},
-    {"name": "shippingSalesTax", "type": "double"},
-    {"name": "extShipAdjustment", "type": "double"},
-    {"name": "extPriceOverride", "type": "double"},
-    {"name": "extFeesAdjustment", "type": "double"},
-    {"name": "extRewards", "type": "double"},
-    {"name": "extTransAdjustment", "type": "double"}
+    {"name": "ORDER_ID", "type": "string"},
+    {"name": "ORDER_ITEM_SEQ_ID", "type": "string"},
+    {"name": "SHIPPING_CHARGES", "type": "double"},
+    {"name": "SHIPPING_SALES_TAX", "type": "double"},
+    {"name": "EXT_SHIP_ADJUSTMENT", "type": "double"},
+    {"name": "EXT_PRICE_OVERRIDE", "type": "double"},
+    {"name": "EXT_FEES_ADJUSTMENT", "type": "double"},
+    {"name": "EXT_REWARDS", "type": "double"},
+    {"name": "EXT_TRANS_ADJUSTMENT", "type": "double"}
   ]
 }
