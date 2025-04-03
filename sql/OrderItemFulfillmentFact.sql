@@ -134,7 +134,7 @@ with
       ofc.order_id,
       ofc.order_item_seq_id,
       ofc.change_datetime,
-      ofv.comments,
+      ofc.comments,
       row_number() over (
         partition by
           ofc.order_id,
