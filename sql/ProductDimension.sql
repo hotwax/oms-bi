@@ -3,10 +3,10 @@
 -- ******************************************************************
 
 SELECT
-    P.PRODUCT_ID AS `productId`,
-    P.PRODUCT_TYPE_ID AS `productTypeId`,
-    PT.PARENT_TYPE_ID AS `parentTypeId`,
-    P.INTERNAL_NAME AS `internalName`,
+    P.PRODUCT_ID AS `PRODUCT_ID`,
+    P.PRODUCT_TYPE_ID AS `PRODUCT_TYPE_ID`,
+    PT.PARENT_TYPE_ID AS `PARENT_TYPE_ID`,
+    P.INTERNAL_NAME AS `INTERNAL_NAME`,
     (
         SELECT GI.ID_VALUE
         FROM GOOD_IDENTIFICATION GI
@@ -14,7 +14,7 @@ SELECT
             GI.PRODUCT_ID = P.PRODUCT_ID
             AND GI.GOOD_IDENTIFICATION_TYPE_ID = 'SKU'
         LIMIT 1
-    ) AS `sku`,
+    ) AS `SKU`,
     (
         SELECT GI.ID_VALUE
         FROM GOOD_IDENTIFICATION GI
@@ -22,15 +22,15 @@ SELECT
             GI.PRODUCT_ID = P.PRODUCT_ID
             AND GI.GOOD_IDENTIFICATION_TYPE_ID = 'UPCA'
         LIMIT 1
-    ) AS `upca`,
-    P.PRODUCT_NAME AS `productName`,
-    P.BRAND_NAME AS `brandName`,
-    p2.PRODUCT_ID AS `parentProductId`,
-    p2.PRODUCT_NAME AS `parentProductName`,
-    pc.PRODUCT_CATEGORY_ID AS `primaryProductCategoryId`,
-    pc.CATEGORY_NAME AS `primaryProductCategoryName`,
-    product_feat.color AS `featureColor`,
-    product_feat.size AS `featureSize`,
+    ) AS `UPCA`,
+    P.PRODUCT_NAME AS `PRODUCT_NAME`,
+    P.BRAND_NAME AS `BRAND_NAME`,
+    p2.PRODUCT_ID AS `PARENT_PRODUCT_ID`,
+    p2.PRODUCT_NAME AS `PARENT_PRODUCT_NAME`,
+    pc.PRODUCT_CATEGORY_ID AS `PRIMARY_PRODUCT_CATEGORY_ID`,
+    pc.CATEGORY_NAME AS `PRIMARY_PRODUCT_CATEGORY_NAME`,
+    product_feat.color AS `FEATURE_COLOR`,
+    product_feat.size AS `FEATURE_SIZE`,
     (
         case
             when p.IS_VIRTUAL = 'N'
@@ -43,7 +43,7 @@ SELECT
             and p.is_variant = 'Y' then "Both"
             else null
         end
-    ) AS `variationType`,
+    ) AS `VARIATION_TYPE`,
     P.CREATED_TX_STAMP AS 'cursorDate'
 FROM
     PRODUCT P

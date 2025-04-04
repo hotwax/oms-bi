@@ -16,56 +16,56 @@ order_status_slice AS (
     )
 )
 SELECT
-  os.ORDER_ID AS orderId,
-  os.ORDER_ITEM_SEQ_ID AS orderItemSeqId,
+  os.ORDER_ID AS `ORDER_ID`,
+  os.ORDER_ITEM_SEQ_ID AS `ORDER_ITEM_SEQ_ID`,
   (
     SELECT SUM(oa.AMOUNT)
     FROM order_adjustment oa
     WHERE oa.ORDER_ID = os.ORDER_ID 
       AND oa.ORDER_ITEM_SEQ_ID = '_NA_'
       AND oa.ORDER_ADJUSTMENT_TYPE_ID = 'SHIPPING_CHARGES'
-  ) AS shippingCharges,
+  ) AS `SHIPPING_CHARGES`,
   (
     SELECT SUM(oa.AMOUNT)
     FROM order_adjustment oa
     WHERE oa.ORDER_ID = os.ORDER_ID 
       AND oa.ORDER_ITEM_SEQ_ID = '_NA_'
       AND oa.ORDER_ADJUSTMENT_TYPE_ID = 'SHIPPING_SALES_TAX'
-  ) AS shippingSalesTax,
+  ) AS `SHIPPING_SALES_TAX`,
   (
     SELECT SUM(oa.AMOUNT)
     FROM order_adjustment oa
     WHERE oa.ORDER_ID = os.ORDER_ID 
       AND oa.ORDER_ITEM_SEQ_ID = '_NA_'
       AND oa.ORDER_ADJUSTMENT_TYPE_ID = 'EXT_SHIP_ADJUSTMENT'
-  ) AS extShipAdjustment,
+  ) AS `EXT_SHIP_ADJUSTMENT`,
   (
     SELECT SUM(oa.AMOUNT)
     FROM order_adjustment oa
     WHERE oa.ORDER_ID = os.ORDER_ID 
       AND oa.ORDER_ITEM_SEQ_ID = os.ORDER_ITEM_SEQ_ID
       AND oa.ORDER_ADJUSTMENT_TYPE_ID = 'EXT_PRICE_OVERRIDE'
-  ) AS extPriceOverride,
+  ) AS `EXT_PRICE_OVERRIDE`,
   (
     SELECT SUM(oa.AMOUNT)
     FROM order_adjustment oa
     WHERE oa.ORDER_ID = os.ORDER_ID 
       AND oa.ORDER_ITEM_SEQ_ID = os.ORDER_ITEM_SEQ_ID
       AND oa.ORDER_ADJUSTMENT_TYPE_ID = 'EXT_FEES_ADJUSTMENT'
-  ) AS extFeesAdjustment,
+  ) AS `EXT_FEES_ADJUSTMENT`,
   (
     SELECT SUM(oa.AMOUNT)
     FROM order_adjustment oa
     WHERE oa.ORDER_ID = os.ORDER_ID 
       AND oa.ORDER_ITEM_SEQ_ID = os.ORDER_ITEM_SEQ_ID
       AND oa.ORDER_ADJUSTMENT_TYPE_ID = 'EXT_REWARDS'
-  ) AS extRewards,
+  ) AS `EXT_REWARDS`,
   (
     SELECT SUM(oa.AMOUNT)
     FROM order_adjustment oa
     WHERE oa.ORDER_ID = os.ORDER_ID 
       AND oa.ORDER_ITEM_SEQ_ID = os.ORDER_ITEM_SEQ_ID
       AND oa.ORDER_ADJUSTMENT_TYPE_ID = 'EXT_TRANS_ADJUSTMENT'
-  ) AS extTransAdjustment
+  ) AS `EXT_TRANS_ADJUSTMENT`
 FROM
   order_status_slice os

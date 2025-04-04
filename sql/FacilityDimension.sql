@@ -3,18 +3,18 @@
 -- ******************************************************************
 
 select
-    f.FACILITY_ID AS `facilityId`,
-    f.FACILITY_NAME AS `facilityName`,
-    f.FACILITY_TYPE_ID AS `facilityTypeId`,
-    ft.PARENT_TYPE_ID AS `parentTypeId`,
-    pa.LATITUDE AS `latitude`,
-    pa.LONGITUDE AS `longitude`,
-    pa.CITY AS `city`,
-    pa.STATE_PROVINCE_GEO_ID AS `stateProvinceGeoId`,
-    pa.COUNTRY_GEO_ID AS `countryGeoId`,
-    pa.POSTAL_CODE AS `postalCode`,
-    pa.ADDRESS1 AS `address1`,
-    f.CREATED_TX_STAMP AS `cursorDate`
+    f.FACILITY_ID AS `FACILITY_ID`,
+    f.FACILITY_NAME AS `FACILITY_NAME`,
+    f.FACILITY_TYPE_ID AS `FACILITY_TYPE_ID`,
+    ft.PARENT_TYPE_ID AS `PARENT_TYPE_ID`,
+    pa.LATITUDE AS `LATITUDE`,
+    pa.LONGITUDE AS `LONGITUDE`,
+    pa.CITY AS `CITY`,
+    pa.STATE_PROVINCE_GEO_ID AS `STATE_PROVINCE_GEO_ID`,
+    pa.COUNTRY_GEO_ID AS `COUNTRY_GEO_ID`,
+    pa.POSTAL_CODE AS `POSTAL_CODE`,
+    pa.ADDRESS1 AS `ADDRESS1`,
+    f.CREATED_TX_STAMP AS 'cursorDate'
 from
     facility f
     join facility_type ft on ft.FACILITY_TYPE_ID = f.FACILITY_TYPE_ID

@@ -3,10 +3,10 @@
 	"name": "EnumerationDimension",
 	"namespace": "co.hotwax.bi.dimension",
 	"fields": [
-		{ "name": "enumId", "type": "string" },
-		{ "name": "enumTypeId", "type": "string" },
-		{ "name": "enumCode", "type": "string" },
-		{ "name": "description", "type": "string" },
-		{ "name": "enumName", "type": "string" }
+		{ "name": "ENUM_ID", "type": "string" },
+		{ "name": "ENUM_TYPE_ID", "type": "string" },
+		{ "name": "ENUM_CODE", "type": "string" },
+		{ "name": "DESCRIPTION", "type": "string" },
+		{ "name": "ENUM_NAME", "type": "string" }
 	]
 }
