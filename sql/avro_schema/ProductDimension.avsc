@@ -3,7 +3,7 @@
     "name": "ProductDimension",
     "namespace": "co.hotwax.bi.dimension",
     "fields": [
-        { "name": "PRODUCT_ID", "type": "string" },
+        { "name": "PRODUCT_ID", "type": "string", "aliases": ["PRIMARY_KEY"] },
         { "name": "PRODUCT_TYPE_ID", "type": "string" },
         { "name": "PARENT_TYPE_ID", "type": "string" },
         { "name": "INTERNAL_NAME", "type": "string" },

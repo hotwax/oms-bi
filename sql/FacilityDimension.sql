@@ -3,7 +3,7 @@
 -- ******************************************************************
 
 select
-    f.FACILITY_ID AS `FACILITY_ID`,
+    f.FACILITY_ID AS `PRIMARY_KEY`,
     f.FACILITY_NAME AS `FACILITY_NAME`,
     f.FACILITY_TYPE_ID AS `FACILITY_TYPE_ID`,
     ft.PARENT_TYPE_ID AS `PARENT_TYPE_ID`,

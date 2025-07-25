@@ -3,7 +3,7 @@
 -- ******************************************************************
 
 SELECT
-    P.PRODUCT_ID AS `PRODUCT_ID`,
+    P.PRODUCT_ID AS `PRIMARY_KEY`,
     P.PRODUCT_TYPE_ID AS `PRODUCT_TYPE_ID`,
     PT.PARENT_TYPE_ID AS `PARENT_TYPE_ID`,
     P.INTERNAL_NAME AS `INTERNAL_NAME`,

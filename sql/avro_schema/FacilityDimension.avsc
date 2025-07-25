@@ -3,7 +3,7 @@
   "name": "FacilityDimension",
   "namespace": "co.hotwax.bi.dimension",
   "fields": [
-    { "name": "FACILITY_ID", "type": "string" },
+    { "name": "FACILITY_ID", "type": "string", "aliases": ["PRIMARY_KEY"] },
     { "name": "FACILITY_NAME", "type": "string" },
     { "name": "FACILITY_TYPE_ID", "type": "string" },
     { "name": "PARENT_TYPE_ID", "type": "string" },
