@@ -1,8 +1,8 @@
 SELECT
-  e.ENUM_ID enumId,
-  e.ENUM_TYPE_ID enumTypeId,
-  e.ENUM_CODE enumCode,
-  e.DESCRIPTION description,
-  e.ENUM_NAME enumName,
+  e.ENUM_ID AS `ENUM_ID`,
+  e.ENUM_TYPE_ID AS `ENUM_TYPE_ID`,
+  e.ENUM_CODE AS `ENUM_CODE`,
+  e.DESCRIPTION AS `DESCRIPTION`,
+  e.ENUM_NAME AS `ENUM_NAME`,
   e.CREATED_TX_STAMP cursorDate
 FROM enumeration e
