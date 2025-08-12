@@ -16,7 +16,7 @@
     { "name": "CHANGE_DATETIME", "type": { "type": "long", "logicalType": "timestamp-millis" }},
     { "name": "CHANGE_REASON_ENUM_ID", "type": "string" },
     { "name": "COMMENTS", "type": "string" },
-    { "name": "CHANGE_USER_LOGIN", "type": "long" },
+    { "name": "CHANGE_USER_LOGIN", "type": "string" },
     { "name": "ORDER_ROUTING_ID", "type": "string" },
     { "name": "ORDER_ROUTING_NAME", "type": "string" },
     { "name": "ROUTING_RUN_ID", "type": "string" },
