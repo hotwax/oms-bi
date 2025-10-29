@@ -3,7 +3,7 @@
     "name": "TransferOrderItemFact",
     "namespace": "co.hotwax.bi.fact",
     "fields": [
-        {"name": "TRANFER_ORDER_ITEM_FACT_ID", "type": "string", "aliases": ["PRIMARY_KEY"] },
+        {"name": "TRANSFER_ORDER_ITEM_FACT_ID", "type": "string", "aliases": ["PRIMARY_KEY"] },
         {"name": "ORDER_ID", "type": "string"},
         {"name": "ORDER_NAME", "type":"string"},
         {"name": "ORDER_ENTRY_DATE", "type": {"type": "long", "logicalType": "timestamp-millis"}},
