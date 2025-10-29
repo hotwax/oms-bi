@@ -1,24 +1,24 @@
 SELECT 
-  IID.Inventory_Item_Id,
-  IID.Inventory_Item_Detail_Seq_Id,
-  II.Facility_Id,
-  II.Product_Id,
-  PAC.Average_Cost_Post_Event, -- Entity needs to be added back after db merge
-  IID.Effective_Date,
-  IID.Quantity_On_Hand_Diff,
-  IID.Available_To_Promise_Diff,
-  IID.QOH_Before_Diff, -- Field needs to be added into the IID table
-  IID.ATP_Before_Diff, -- Field needs to be added into the IID table
-  IID.Reason_Enum_Id,
-  IID.Order_Id,
-  IID.Order_Item_Seq_Id,
-  IID.Ship_Group_Seq_Id,
-  IID.Shipment_Id,
-  IID.Shipment_Item_Seq_Id,
-  IID.Return_Id,	
-  IID.Return_Item_Seq_Id,
-  IID.Item_Issuance_Id,
-  IID.Receipt_Id
+  IID.INVENTORY_ITEM_ID as `INVENTORY_ITEM_ID`,
+  IID.INVENTORY_ITEM_DETAIL_SEQ_ID as `INVENTORY_ITEM_DETAIL_SEQ_ID`
+  II.FACILITY_ID as `FACILITY_ID`,
+  II.PRODUCT_ID as `PRODUCT_ID`,
+  PAC.AVERAGE_COST_POST_EVENT as `AVERAGE_COST_POST_EVENT`, -- Entity needs to be added back after db merge
+  IID.EFFECTIVE_DATE as `EFFECTIVE_DATE`,
+  IID.QUANTITY_ON_HAND_DIFF as `QUANTITY_ON_HAND_DIFF`,
+  IID.AVAILABLE_TO_PROMISE_DIFF as `AVAILABLE_TO_PROMISE_DIFF`,
+  IID.QOH_BEFORE_DIFF as `QOH_BEFORE_DIFF`, -- Field needs to be added into the IID table
+  IID.ATP_BEFORE_DIFF as `ATP_BEFORE_DIFF`, -- Field needs to be added into the IID table
+  IID.REASON_ENUM_ID as `REASON_ENUM_ID`,
+  IID.ORDER_ID as `ORDER_ID`,
+  IID.ORDER_ITEM_SEQ_ID as `ORDER_ITEM_SEQ_ID`,
+  IID.SHIP_GROUP_SEQ_ID as `SHIP_GROUP_SEQ_ID`,
+  IID.SHIPMENT_ID as `SHIPMENT_ID`,
+  IID.SHIPMENT_ITEM_SEQ_ID as `SHIPMENT_ITEM_SEQ_ID`,
+  IID.RETURN_ID as `RETURN_ID`,
+  IID.RETURN_ITEM_SEQ_ID as `RETURN_ITEM_SEQ_ID`,
+  IID.ITEM_ISSUANCE_ID as `ITEM_ISSUANCE_ID`,
+  IID.RECEIPT_ID as `RECEIPT_ID`
 FROM 
   inventory_item_detail IID 
 JOIN 

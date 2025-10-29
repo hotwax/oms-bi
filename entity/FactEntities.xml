@@ -267,4 +267,57 @@ under the License.
         <field name="lastName" type="text-medium"/>
         <field name="happenedAt" type="date-time"/>
     </entity>
+
+    <entity entity-name="InventoryItemDetailFact" package-name="co.hotwax.bi.fact" group="analytical">
+        <field name="inventoryItemDetailFactId" type="id" is-pk="true"/>
+        <field name="inventoryItemId" type="id"/>
+        <field name="inventoryItemDetailSeqId" type="id"/>
+        <field name="facilityId" type="id"/>
+        <field name="productId" type="id"/>
+        <field name="reasonEnumId" type="id"/>
+        <field name="orderId" type="id"/>
+        <field name="orderItemSeqId" type="id"/>
+        <field name="shipGroupSeqId" type="id"/>
+        <field name="shipmentId" type="id"/>
+        <field name="shipmentItemSeqId" type="id"/>
+        <field name="returnId" type="id"/>
+        <field name="returnItemSeqId" type="id"/>
+        <field name="itemIssuanceId" type="id"/>
+        <field name="receiptId" type="id"/>
+        <field name="averageCostPostEvent" type="currency-amount"/>
+        <field name="effectiveDate" type="date-time"/>
+        <field name="quantityOnHandDiff" type="number-integer"/>
+        <field name="availableToPromiseDiff" type="number-integer"/>
+        <field name="qohBeforeDiff" type="number-integer"/>
+        <field name="atpBeforeDiff" type="number-integer"/>
+    </entity>
+
+    <entity entity-name="TransferOrderItemFact" package="co.hotwax.bi.fact"  group="analytical">
+        <field name="transferOrderItemFactId" type="id" is-pk="true"/>
+        <field name="orderId" type="id" />
+        <field name="orderName" type="text-short"/>
+        <field name="orderEntryDate" type="date-time"/>
+        <field name="orderStatus" type="text-short"/>
+        <field name="orderCompletionDate" type="date-time"/>
+        <field name="orderCancellationDate" type="date-time"/>
+        <field name="salesChannelEnumId" type="id"/>
+        <field name="productStoreId" type="id"/>
+        <field name="requestedShipMethTypeId" type="id"/>
+        <field name="statusFlowId" type="id"/>
+        <field name="orderDate" type="date-time"/>
+        <field name="orderItemSeqId" type="id"/>
+        <field name="orderItemStatusId" type="id"/>
+        <field name="orderItemCreationDate" type="date-time"/>
+        <field name="orderItemCompletionDate" type="date-time"/>
+        <field name="orderItemCancellationDate" type="date-time"/>
+        <field name="orderedQuantity" type="number-integer"/>
+        <field name="shippedQuantity" type="number-integer"/>
+        <field name="shippedDate" type="date-time"/>
+        <field name="receivedQuantity" type="number-integer"/>
+        <field name="receivedDate" type="date-time"/>
+        <field name="productId" type="id"/>
+        <field name="originFacilityId" type="id"/>
+        <field name="destinationFacilityId" type="id"/>
+    </entity>
+
 </entities>

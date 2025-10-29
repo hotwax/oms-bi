@@ -1,0 +1,28 @@
+{
+  "type": "record",
+  "name": "InventoryItemDetailFact",
+  "namespace": "co.hotwax.bi.fact",
+  "fields": [
+    {"name": "INVENTORY_ITEM_DETAIL_FACT_ID", "type": "string", "aliases": ["PRIMARY_KEY"] },
+    {"name": "INVENTORY_ITEM_ID", "type": "string"},
+    {"name": "INVENTORY_ITEM_DETAIL_SEQ_ID", "type": "string"},
+    {"name": "FACILITY_ID", "type": "string"},
+    {"name": "PRODUCT_ID", "type": "string"},
+    {"name": "AVERAGE_COST_POST_EVENT", "type": "double"},
+    {"name": "EFFECTIVE_DATE", "type": {"type": "long", "logicalType": "timestamp-millis"}},
+    {"name": "QUANTITY_ON_HAND_DIFF", "type": "int"},
+    {"name": "AVAILABLE_TO_PROMISE_DIFF", "type": "int"},
+    {"name": "QOH_BEFORE_DIFF", "type": "int"},
+    {"name": "ATP_BEFORE_DIFF", "type": "int"},
+    {"name": "REASON_ENUM_ID", "type": "string"},
+    {"name": "ORDER_ID", "type": "string"},
+    {"name": "ORDER_ITEM_SEQ_ID", "type": "string"},
+    {"name": "SHIP_GROUP_SEQ_ID", "type": "string"},
+    {"name": "SHIPMENT_ID", "type": "string"},
+    {"name": "SHIPMENT_ITEM_SEQ_ID", "type": "string"},
+    {"name": "RETURN_ID", "type": "string"},
+    {"name": "RETURN_ITEM_SEQ_ID", "type": "string"},
+    {"name": "ITEM_ISSUANCE_ID", "type": "string"},
+    {"name": "RECEIPT_ID", "type": "string"}
+  ]
+}
