@@ -27,6 +27,14 @@
         {"name": "RECEIVED_DATE", "type": {"type": "long", "logicalType": "timestamp-millis"}},
         {"name": "PRODUCT_ID", "type": "string"},
         {"name": "ORIGIN_FACILITY_ID", "type": "string"},
-        {"name": "DESTINATION_FACILITY_ID", "type": "string"}
+        {"name": "DESTINATION_FACILITY_ID", "type": "string"},
+        {"name": "EXTERNAL_ID", "type": "string"},
+        {"name": "PRIORITY", "type": "string"},
+        {"name": "STATUS_USER_LOGIN_ID", "type": "string"},
+        {"name": "ITEM_EXTERNAL_ID", "type": "string"},
+        {"name": "ITEM_STATUS_USER_LOGIN_ID", "type": "string"},
+        {"name": "SHIPMENT_ID", "type": "string"},
+        {"name": "ITEM_DESCRIPTION", "type": "string"},
+        {"name": "CANCEL_QUANTITY", "type": "double"}
     ]
 }
