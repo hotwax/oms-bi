@@ -1,3 +1,6 @@
+-- ******************************************************************
+-- Base Query that fetches initial data
+-- ******************************************************************
 WITH order_item_status as (
     SELECT
       oh.order_id,
@@ -114,8 +117,33 @@ SELECT
 
 FROM
     manual_receipts mr
-    JOIN order_header oh ON mr.order_id = oh.order_id
+    JOIN order_header oh ON mr.order_id = oh.order_id and oh.order_type_id = 'TRANSFER_ORDER' and oh.status_id IN ('ORDER_COMPLETED', 'ORDER_CANCELLED')
     JOIN order_status os ON oh.order_id = os.order_id and os.status_id in ('ORDER_COMPLETED', 'ORDER_CANCELLED')
+    JOIN order_item_ship_group oisg ON oh.ORDER_ID = oisg.ORDER_ID
 
-    JOIN order_item_ship_group oisg ON oh.ORDER_ID = oisg.ORDER_ID;
+-- ******************************************************************
+-- SQL to fetch the remaining data, mainly status dates
+-- ******************************************************************
+select
+    order_id,
+    order_item_seq_id,
+    MIN(os.status_datetime) as ITEM_CREATED_DATE
+from
+    order_status os
+where
+    os.STATUS_ID='ITEM_CREATED'
+    and os.order_id='${ORDER_ID}'
+    and os.ORDER_ITEM_SEQ_ID='${ORDER_ITEM_SEQ_ID}'
+group by
+    os.order_id,
+    os.order_item_seq_id
 
+-- ******************************************************************
+-- Query to combine whole data
+-- ******************************************************************
+
+    SELECT o.*, e.*
+    FROM original o
+    LEFT JOIN enrichment e
+    ON o.ORDER_ID = e.ORDER_ID
+    and o.ORDER_ITEM_SEQ_ID = e.ORDER_ITEM_SEQ_ID
