@@ -318,6 +318,14 @@ under the License.
         <field name="productId" type="id"/>
         <field name="originFacilityId" type="id"/>
         <field name="destinationFacilityId" type="id"/>
+        <field name="externalId" type="id"/>
+        <field name="priority" type="text-short"/>
+        <field name="statusUserLoginId" type="id"/>
+        <field name="itemExternalId" type="id"/>
+        <field name="itemStatusUserLoginId" type="id"/>
+        <field name="shipmentId" type="id"/>
+        <field name="itemDescription" type="text-medium"/>
+        <field name="cancelQuantity" type="number-integer"/>
     </entity>
 
 </entities>
