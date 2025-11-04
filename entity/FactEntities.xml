@@ -288,6 +288,7 @@ under the License.
         <field name="effectiveDate" type="date-time"/>
         <field name="quantityOnHandDiff" type="number-integer"/>
         <field name="availableToPromiseDiff" type="number-integer"/>
+        <field name="accountingQuantityDiff" type="number-integer"/>
         <field name="qohBeforeDiff" type="number-integer"/>
         <field name="atpBeforeDiff" type="number-integer"/>
     </entity>

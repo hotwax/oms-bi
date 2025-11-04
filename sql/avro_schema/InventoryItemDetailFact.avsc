@@ -12,6 +12,7 @@
     {"name": "EFFECTIVE_DATE", "type": {"type": "long", "logicalType": "timestamp-millis"}},
     {"name": "QUANTITY_ON_HAND_DIFF", "type": "int"},
     {"name": "AVAILABLE_TO_PROMISE_DIFF", "type": "int"},
+    {"name": "ACCOUNTING_QUANTITY_DIFF", "type": "int"},
     {"name": "QOH_BEFORE_DIFF", "type": "int"},
     {"name": "ATP_BEFORE_DIFF", "type": "int"},
     {"name": "REASON_ENUM_ID", "type": "string"},

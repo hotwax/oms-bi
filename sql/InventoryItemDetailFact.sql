@@ -1,14 +1,36 @@
-SELECT 
+-- ******************************************************************
+-- Base Query that fetches the Fact data
+-- ******************************************************************
+SELECT
   IID.INVENTORY_ITEM_ID as `INVENTORY_ITEM_ID`,
-  IID.INVENTORY_ITEM_DETAIL_SEQ_ID as `INVENTORY_ITEM_DETAIL_SEQ_ID`
+  IID.INVENTORY_ITEM_DETAIL_SEQ_ID as `INVENTORY_ITEM_DETAIL_SEQ_ID`,
   II.FACILITY_ID as `FACILITY_ID`,
   II.PRODUCT_ID as `PRODUCT_ID`,
-  PAC.AVERAGE_COST_POST_EVENT as `AVERAGE_COST_POST_EVENT`, -- Entity needs to be added back after db merge
+  (
+    SELECT
+      PAC.average_cost
+    FROM
+      product_average_cost PAC
+    WHERE
+      II.product_id = PAC.product_id
+      AND II.facility_id = PAC.facility_id
+      AND PAC.product_average_cost_type_id = 'WEIGHTED_AVG_COST'
+      AND (
+        PAC.thru_date > IID.effective_date
+        OR PAC.thru_date IS NULL
+      )
+    ORDER BY
+      CASE WHEN PAC.thru_date IS NULL THEN 1 ELSE 0 END,
+      PAC.thru_date
+    LIMIT 1
+    )
+  as `AVERAGE_COST_POST_EVENT`,
   IID.EFFECTIVE_DATE as `EFFECTIVE_DATE`,
   IID.QUANTITY_ON_HAND_DIFF as `QUANTITY_ON_HAND_DIFF`,
   IID.AVAILABLE_TO_PROMISE_DIFF as `AVAILABLE_TO_PROMISE_DIFF`,
-  IID.QOH_BEFORE_DIFF as `QOH_BEFORE_DIFF`, -- Field needs to be added into the IID table
-  IID.ATP_BEFORE_DIFF as `ATP_BEFORE_DIFF`, -- Field needs to be added into the IID table
+  IID.ACCOUNTING_QUANTITY_DIFF as `ACCOUNTING_QUANTITY_DIFF`,
+  IID.LAST_QUANTITY_ON_HAND as `QOH_BEFORE_DIFF`,
+  IID.LAST_AVAILABLE_TO_PROMISE as `ATP_BEFORE_DIFF`,
   IID.REASON_ENUM_ID as `REASON_ENUM_ID`,
   IID.ORDER_ID as `ORDER_ID`,
   IID.ORDER_ITEM_SEQ_ID as `ORDER_ITEM_SEQ_ID`,
@@ -18,14 +40,10 @@ SELECT
   IID.RETURN_ID as `RETURN_ID`,
   IID.RETURN_ITEM_SEQ_ID as `RETURN_ITEM_SEQ_ID`,
   IID.ITEM_ISSUANCE_ID as `ITEM_ISSUANCE_ID`,
-  IID.RECEIPT_ID as `RECEIPT_ID`
-FROM 
-  inventory_item_detail IID 
-JOIN 
+  IID.RECEIPT_ID as `RECEIPT_ID`,
+  IID.effective_date as `cursorDate`
+FROM
+  inventory_item_detail IID
+JOIN
   inventory_item II
   ON IID.inventory_item_id = II.inventory_item_id
-JOIN
-  product_average_cost PAC
-  ON II.product_id = PAC.product_id
-  AND II.facility_id = PAC.facility_id
-  AND PAC.product_average_cost_type_id = 'WEIGHTED_AVG_COST'
