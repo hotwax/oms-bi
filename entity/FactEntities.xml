@@ -31,6 +31,7 @@ under the License.
         <field name="salesChannelEnumId" type="id"/>
         <field name="entryDate" type="date-time"/>
         <field name="orderDate" type="date-time"/>
+        <field name="orderDateDimId" type="date"/>
         <field name="shippingCharges" type="currency-amount"/>
         <field name="productId" type="id"/>
         <field name="itemDescription" type="text-medium"/>
@@ -90,6 +91,35 @@ under the License.
         <relationship type="one-nofk" related="moqui.olap.DateDayDimension">
             <key-map field-name="itemCancelledDateDimId" related="dateValue"/>
         </relationship>
+        <index name="IDX_OIFF_PRODUCT_ID">
+            <index-field name="productId"/>
+        </index>
+        <index name="IDX_OIFF_ORDER_DATE">
+            <index-field name="orderDateDimId"/>
+        </index>
+        <index name="IDX_OIFF_FACILITY_ID">
+            <index-field name="facilityId"/>
+        </index>
+        <index name="IDX_OIFF_SALES_CHANNEL">
+            <index-field name="salesChannelEnumId"/>
+        </index>
+        <index name="IDX_OIFF_SHIP_METHOD">
+            <index-field name="shipmentMethodTypeId"/>
+        </index>
+        <index name="IDX_OIFF_ORDER_DATE_DIM_ID">
+            <index-field name="orderDateDimId"/>
+        </index>
+        <index name="IDX_OIFF_ITEM_COMPLETED_DIM_ID">
+            <index-field name="itemCompletedDateDimId"/>
+        </index>
+        <index name="IDX_OIFF_ITEM_CANCELLED_DIM_ID">
+            <index-field name="itemCancelledDateDimId"/>
+        </index>
+        <index name="IDX_OIFF_ODATE_SC_SHIP">
+            <index-field name="orderDateDimId"/>
+            <index-field name="salesChannelEnumId"/>
+            <index-field name="shipmentMethodTypeId"/>
+        </index>
     </entity>
 
     <entity entity-name="OrderAdjustmentFact" package="co.hotwax.bi.fact" group="analytical">
