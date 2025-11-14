@@ -17,6 +17,7 @@ from
       oh.SALES_CHANNEL_ENUM_ID AS `SALES_CHANNEL_ENUM_ID`,
       oh.ENTRY_DATE AS `ENTRY_DATE`,
       oh.ORDER_DATE AS `ORDER_DATE`,
+      date(oh.ORDER_DATE) AS `ORDER_DATE_DIM_ID`,
       (
         select
           sum(oa.amount)

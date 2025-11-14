@@ -14,6 +14,7 @@
     {"name": "SALES_CHANNEL_ENUM_ID", "type": "string"},
     {"name": "ENTRY_DATE", "type": {"type": "long", "logicalType": "timestamp-millis"}},
     {"name": "ORDER_DATE", "type": {"type": "long", "logicalType": "timestamp-millis"}},
+    {"name": "ORDER_DATE_DIM_ID", "type": {"type": "int", "logicalType": "date"}},
     {"name": "SHIPPING_CHARGES", "type": "double"},
     {"name": "PRODUCT_ID", "type": "string"},
     {"name": "ITEM_DESCRIPTION", "type": "string"},

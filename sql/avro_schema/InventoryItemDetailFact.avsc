@@ -10,6 +10,7 @@
     {"name": "PRODUCT_ID", "type": "string"},
     {"name": "AVERAGE_COST_POST_EVENT", "type": "double"},
     {"name": "EFFECTIVE_DATE", "type": {"type": "long", "logicalType": "timestamp-millis"}},
+    {"name": "EFFECTIVE_DATE_DIM_ID", "type": {"type": "int", "logicalType": "date"}},
     {"name": "QUANTITY_ON_HAND_DIFF", "type": "int"},
     {"name": "AVAILABLE_TO_PROMISE_DIFF", "type": "int"},
     {"name": "ACCOUNTING_QUANTITY_DIFF", "type": "int"},
