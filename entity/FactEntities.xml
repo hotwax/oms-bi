@@ -95,7 +95,7 @@ under the License.
             <index-field name="productId"/>
         </index>
         <index name="IDX_OIFF_ORDER_DATE">
-            <index-field name="orderDateDimId"/>
+            <index-field name="orderDate"/>
         </index>
         <index name="IDX_OIFF_FACILITY_ID">
             <index-field name="facilityId"/>
