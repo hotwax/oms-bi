@@ -316,11 +316,27 @@ under the License.
         <field name="receiptId" type="id"/>
         <field name="averageCostPostEvent" type="currency-amount"/>
         <field name="effectiveDate" type="date-time"/>
+        <field name="effectiveDateDimId" type="date"/>
         <field name="quantityOnHandDiff" type="number-integer"/>
         <field name="availableToPromiseDiff" type="number-integer"/>
         <field name="accountingQuantityDiff" type="number-integer"/>
         <field name="qohBeforeDiff" type="number-integer"/>
         <field name="atpBeforeDiff" type="number-integer"/>
+        <index name="IDX_IIDF_EFFECTIVE_DATE">
+            <index-field name="effectiveDate"/>
+        </index>
+        <index name="IDX_IIDF_EFFECTIVE_DATE_DIM_ID">
+            <index-field name="effectiveDateDimId"/>
+        </index>
+        <index name="IDX_IIDF_REASON_ENUM_ID">
+            <index-field name="reasonEnumId"/>
+        </index>
+        <index name="IDX_IIDF_FACILITY_ID">
+            <index-field name="facilityId"/>
+        </index>
+        <index name="IDX_IIDF_PRODUCT_ID">
+            <index-field name="productId"/>
+        </index>
     </entity>
 
     <entity entity-name="TransferOrderItemFact" package="co.hotwax.bi.fact"  group="analytical">
