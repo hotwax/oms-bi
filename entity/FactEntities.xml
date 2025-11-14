@@ -298,7 +298,7 @@ under the License.
         <field name="happenedAt" type="date-time"/>
     </entity>
 
-    <entity entity-name="InventoryItemDetailFact" package-name="co.hotwax.bi.fact" group="analytical">
+    <entity entity-name="InventoryItemDetailFact" package="co.hotwax.bi.fact" group="analytical">
         <field name="inventoryItemDetailFactId" type="id" is-pk="true"/>
         <field name="inventoryItemId" type="id"/>
         <field name="inventoryItemDetailSeqId" type="id"/>
