@@ -7,6 +7,13 @@ ADD COLUMN order_date_dim_id DATE;
 
 
 -- ******************************************************************
+-- Query to insert data into orderDateDimId in orderItemFulfillmentFact
+-- ******************************************************************
+
+UPDATE order_item_fulfillment_fact OIFF
+SET OIFF.order_date_dim_id = DATE(OIFF.order_date) WHERE OIFF.order_date_dim_id IS NULL;
+
+-- ******************************************************************
 -- Query to add indexes to orderItemFulfillmentFact
 -- ******************************************************************
 

@@ -5,6 +5,12 @@
 ALTER TABLE inventory_item_detail_fact
 ADD COLUMN effective_date_dim_id DATE;
 
+-- ******************************************************************
+-- Query to insert data into effectiveDateDimId in inventoryItemDetailFact
+-- ******************************************************************
+
+UPDATE inventory_item_detail_fact IIDF
+SET IIDF.effective_date_dim_id = DATE(IIDF.effective_date) WHERE IIDF.effective_date_dim_id IS NULL; 
 
 -- ******************************************************************
 -- Query to add indexes to inventoryItemDetailFact
