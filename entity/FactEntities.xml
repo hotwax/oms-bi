@@ -333,37 +333,37 @@ under the License.
         <field name="routingBatchId" type="id"/>
         <field name="routerUserLogin" type="id"/>
         <field name="assignmentEnumId" type="id"/>
-        <index name="IDX_OFCH_ORD">
+        <index name="IDX_OFCH_ORDER_ID">
             <index-field name="orderId"/>
         </index>
-        <index name="IDX_OFCH_ORD_ITEM">
+        <index name="IDX_OFCH_ORDER_ITEM">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
         </index>
-        <index name="IDX_OFCH_ORD_ITEM_FACILITY">
+        <index name="IDX_OFCH_ORDER_ITEM_FACILITY">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
             <index-field name="facilityId"/>
         </index>
-        <index name="IDX_OFCG_FACILITY">
+        <index name="IDX_OFCH_FACILITY_ID">
             <index-field name="facilityId"/>
         </index>
-        <index name="IDX_OFCH_SHP_METH_TYPE">
+        <index name="IDX_OFCH_SHIPMENT_METHOD_TYPE_ID">
             <index-field name="shipmentMethodTypeId"/>
         </index>
-        <index name="IDX_OFCH_FRM_FACILITY">
+        <index name="IDX_OFCH_FROM_FACILITY_ID">
             <index-field name="fromFacilityId"/>
         </index>
-        <index name="IDX_OFCH_CHANGE_REASON">
+        <index name="IDX_OFCH_CHANGE_REASON_ENUM_ID">
             <index-field name="changeReasonEnumId"/>
         </index>
-        <index name="IDX_OFCH_PRD_STORE">
+        <index name="IDX_OFCH_PRODUCT_STORE_ID">
             <index-field name="productStoreId"/>
         </index>
-        <index name="IDX_OFCH_CHG_DT_TM">
+        <index name="IDX_OFCH_CHANGE_DATETIME">
             <index-field name="changeDatetime"/>
         </index>
-        <index name="IDX_OFCH_ASSIGNMENT">
+        <index name="IDX_OFCH_ASSIGNMENT_ENUM_ID">
             <index-field name="assignmentEnumId"/>
         </index>
     </entity>
