@@ -143,10 +143,10 @@ under the License.
             <key-map field-name="orderItemSeqId"/>
         </relationship>
 
-        <index name="IDX_OAF_ORD">
+        <index name="IDX_OAF_ORDER_ID">
             <index-field name="orderId"/>
         </index>
-        <index name="IDX_OAF_ITEM">
+        <index name="IDX_OAF_ORDER_ITEM">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
         </index>
@@ -210,24 +210,24 @@ under the License.
         </relationship>
         <relationship type="one-nofk" related="co.hotwax.bi.dimension.FacilityDimension"/>
         <relationship type="one-nofk" related="co.hotwax.bi.dimension.ProductDimension"/>
-        <index name="IDX_AIF_ORD">
+        <index name="IDX_RIF_ORDER_ID">
             <index-field name="orderId"/>
         </index>
-        <index name="IDX_AIF_ORD_ITEM_FACILITY">
+        <index name="IDX_RIF_ORDER_ITEM_FACILITY">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
             <index-field name="facilityId"/>
         </index>
-        <index name="IDX_AIF_ORD_ITEM_FACILITY_SHP_METH_TYPE">
+        <index name="IDX_RIF_ORDER_ITEM_FACILITY_SHIPMENT_METHOD_TYPE">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
             <index-field name="facilityId"/>
             <index-field name="shipmentMethodTypeId"/>
         </index>
-        <index name="IDX_AIF_SAL_CHNL">
+        <index name="IDX_RIF_SALES_CHANNEL_ENUM_ID">
             <index-field name="salesChannelEnumId"/>
         </index>
-        <index name="IDX_AIF_SAL_STAT">
+        <index name="IDX_RIF_RETURN_STATUS_ID">
             <index-field name="returnStatusId"/>
         </index>
     </entity>
@@ -273,38 +273,38 @@ under the License.
         <relationship type="one-nofk" related="co.hotwax.bi.fact.OrderItemFulfillmentFact">
             <key-map field-name="orderId"/>
         </relationship>
-        <index name="IDX_AF_ORD">
+        <index name="IDX_AF_ORDER_ID">
             <index-field name="orderId"/>
         </index>
-        <index name="IDX_AF_ORD_ITEM">
+        <index name="IDX_AF_ORDER_ITEM">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
         </index>
-        <index name="IDX_AF_ORD_ITEM_FACILITY">
+        <index name="IDX_AF_ORDER_ITEM_FACILITY">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
             <index-field name="facilityId"/>
         </index>
-        <index name="IDX_AF_ORD_ITEM_FACILITY_SHP_METH_TYPE">
+        <index name="IDX_AF_ORDER_ITEM_FACILITY_SHIPMENT_METHOD_TYPE">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
             <index-field name="facilityId"/>
             <index-field name="shipmentMethodTypeId"/>
         </index>
-        <index name="IDX_AF_ORD_ITEM_FACILITY_SHP_METH_TYPE_CHANGE_REASON">
+        <index name="IDX_AF_ORDER_ITEM_FACILITY_SHIPMENT_METHOD_TYPE_CHANGE_REASON">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
             <index-field name="facilityId"/>
             <index-field name="shipmentMethodTypeId"/>
             <index-field name="changeReasonEnumId"/>
         </index>
-        <index name="IDX_AF_SAL_CHNL">
+        <index name="IDX_AF_RETURN_CHANNEL_ENUM_ID">
             <index-field name="returnChannelEnumId"/>
         </index>
-        <index name="IDX_AF_SAL_STAT">
+        <index name="IDX_AF_RETURN_STATUS_ID">
             <index-field name="returnStatusId"/>
         </index>
-        <index name="IDX_AF_SALES_CHANNEL">
+        <index name="IDX_AF_SALES_CHANNEL_ENUM_ID">
             <index-field name="salesChannelEnumId"/>
         </index>
     </entity>
