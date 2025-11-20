@@ -17,16 +17,24 @@ SELECT
   oh.order_name as `ORDER_NAME`,
   oh.external_id as `EXTERNAL_ID`,
   oh.entry_date as `ORDER_ENTRY_DATE`,
+  date(oh.entry_date) as `ORDER_ENTRY_DATE_DIM_ID`,
   oh.status_id as `ORDER_STATUS`,
   oh.priority as `PRIORITY`,
   oh.status_flow_id as `STATUS_FLOW_ID`,
   oh.order_date as `ORDER_DATE`,
+  date(oh.order_date) as `ORDER_DATE_DIM_ID`,
   CASE
         WHEN os.status_id = 'ORDER_COMPLETED' THEN os.status_datetime
   END AS `ORDER_COMPLETION_DATE`,
   CASE
+        WHEN os.status_id = 'ORDER_COMPLETED' THEN date(os.status_datetime)
+  END AS `ORDER_COMPLETION_DATE_DIM_ID`,
+  CASE
         WHEN os.status_id = 'ORDER_CANCELLED' THEN os.status_datetime
   END AS `ORDER_CANCELLATION_DATE`,
+  CASE
+        WHEN os.status_id = 'ORDER_CANCELLED' THEN date(os.status_datetime)
+  END AS `ORDER_CANCELLATION_DATE_DIM_ID`,
   os.status_user_login as `STATUS_USER_LOGIN_ID`,
   oh.sales_channel_enum_id as `SALES_CHANNEL_ENUM_ID`,
   oh.product_store_id as `PRODUCT_STORE_ID`,
@@ -37,9 +45,15 @@ SELECT
   CASE
         WHEN ois.status_id = 'ITEM_COMPLETED' THEN ois.status_datetime
   END AS `ORDER_ITEM_COMPLETION_DATE`,
+    CASE
+        WHEN ois.status_id = 'ITEM_COMPLETED' THEN date(ois.status_datetime)
+  END AS `ORDER_ITEM_COMPLETION_DATE_DIM_ID`,
   CASE
         WHEN ois.status_id = 'ITEM_CANCELLED' THEN ois.status_datetime
   END AS `ORDER_ITEM_CANCELLATION_DATE`,
+   CASE
+        WHEN ois.status_id = 'ITEM_CANCELLED' THEN date(ois.status_datetime)
+  END AS `ORDER_ITEM_CANCELLATION_DATE_DIM_ID`,
   ois.status_user_login as `ITEM_STATUS_USER_LOGIN_ID`,
   oi.quantity as `ORDERED_QUANTITY`,
   osh.quantity as `SHIPPED_QUANTITY`,
@@ -83,16 +97,24 @@ SELECT
   oh.order_name as `ORDER_NAME`,
   oh.external_id as `EXTERNAL_ID`,
   oh.entry_date as `ORDER_ENTRY_DATE`,
+  date(oh.entry_date) as `ORDER_ENTRY_DATE_DIM_ID`,
   oh.status_id as `ORDER_STATUS`,
   oh.priority as `PRIORITY`,
   oh.status_flow_id as `STATUS_FLOW_ID`,
   oh.order_date as `ORDER_DATE`,
+  date(oh.order_date) as `ORDER_DATE_DIM_ID`,
   CASE
         WHEN os.status_id = 'ORDER_COMPLETED' THEN os.status_datetime
   END AS `ORDER_COMPLETION_DATE`,
+   CASE
+        WHEN os.status_id = 'ORDER_COMPLETED' THEN date(os.status_datetime)
+  END AS `ORDER_COMPLETION_DATE_DIM_ID`,
   CASE
         WHEN os.status_id = 'ORDER_CANCELLED' THEN os.status_datetime
   END AS `ORDER_CANCELLATION_DATE`,
+   CASE
+        WHEN os.status_id = 'ORDER_CANCELLED' THEN date(os.status_datetime)
+  END AS `ORDER_CANCELLATION_DATE_DIM_ID`,
   os.status_user_login as `STATUS_USER_LOGIN_ID`,
   oh.sales_channel_enum_id as `SALES_CHANNEL_ENUM_ID`,
   oh.product_store_id as `PRODUCT_STORE_ID`,
@@ -101,7 +123,9 @@ SELECT
   NULL as `ITEM_EXTERNAL_ID`,
   'Manually Added' as `ORDER_ITEM_STATUS_ID`,
   NULL AS `ORDER_ITEM_COMPETION_DATE`,
+  NULL AS `ORDER_ITEM_COMPLETION_DATE_DIM_ID`,
   NULL AS `ORDER_ITEM_CANCELLATION_DATE`,
+  NULL AS `ORDER_ITEM_CANCELLATION_DATE_DIM_ID`,
   NULL AS `ITEM_STATUS_USER_LOGIN_ID`,
   0 as `ORDERED_QUANTITY`,
   0 as `SHIPPED_QUANTITY`,
@@ -142,7 +166,8 @@ with
 select
   order_id AS `ORDER_ID`,
   order_item_seq_id AS `ORDER_ITEM_SEQ_ID`,
-  status_datetime AS `ORDER_ITEM_CREATION_DATE`
+  status_datetime AS `ORDER_ITEM_CREATION_DATE`,
+  date(status_datetime) AS `ORDER_ITEM_CREATION_DATE_DIM_ID`
 from
   order_status_slice
 
