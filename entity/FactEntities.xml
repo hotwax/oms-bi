@@ -218,12 +218,6 @@ under the License.
             <index-field name="orderItemSeqId"/>
             <index-field name="orderOriginFacilityId"/>
         </index>
-        <index name="IDX_RIF_ORDER_ITEM_FACILITY_SHIPMENT_METHOD_TYPE">
-            <index-field name="orderId"/>
-            <index-field name="orderItemSeqId"/>
-            <index-field name="orderOriginFacilityId"/>
-            <index-field name="shipmentMethodTypeId"/>
-        </index>
         <index name="IDX_RIF_SALES_CHANNEL_ENUM_ID">
             <index-field name="salesChannelEnumId"/>
         </index>
