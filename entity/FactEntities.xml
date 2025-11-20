@@ -389,6 +389,13 @@ under the License.
         <field name="firstName" type="text-medium"/>
         <field name="lastName" type="text-medium"/>
         <field name="happenedAt" type="date-time"/>
+        
+        <index name="IDX_OSA_ORDER_ID">
+            <index-field name="orderId"/>
+        </index>
+        <index name="IDX_OSA_LINE_TYPE">
+            <index-field name="lineType"/>
+        </index>
     </entity>
 
     <entity entity-name="InventoryItemDetailFact" package="co.hotwax.bi.fact" group="analytical">

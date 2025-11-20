@@ -160,3 +160,10 @@ CREATE INDEX IDX_TOIF_ORDER_ID ON transfer_order_item_fact (order_id);
 CREATE INDEX IDX_TOIF_ORDER_ITEM ON transfer_order_item_fact (order_id, order_item_seq_id);
 
 
+-- ******************************************************************
+-- Query to add indexes to OrderSalesAgreement
+-- ******************************************************************
+CREATE INDEX IDX_OSA_ORDER_ID ON order_sales_agreement (order_id);
+CREATE INDEX IDX_OSA_LINE_TYPE ON order_sales_agreement (line_type);
+
+
