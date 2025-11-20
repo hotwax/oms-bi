@@ -85,10 +85,14 @@ CREATE INDEX IDX_AF_SALES_CHANNEL_ENUM_ID ON appeasement_fact (sales_channel_enu
 -- Query to add indexes to ReturnItemFact
 -- ******************************************************************
 CREATE INDEX IDX_RIF_ORDER_ID ON return_item_fact (order_id);
-CREATE INDEX IDX_RIF_ORDER_ITEM_FACILITY ON return_item_fact (order_id, order_item_seq_id, facility_id);
-CREATE INDEX IDX_RIF_ORDER_ITEM_FACILITY_SHIPMENT_METHOD_TYPE ON return_item_fact (order_id, order_item_seq_id, facility_id, shipment_method_type_id);
+CREATE INDEX IDX_RIF_ORDER_ITEM_FACILITY ON return_item_fact (order_id, order_item_seq_id, order_origin_facility_id);
+CREATE INDEX IDX_RIF_ORDER_ITEM_FACILITY_SHIPMENT_METHOD_TYPE ON return_item_fact (order_id, order_item_seq_id, order_origin_facility_id, shipment_method_type_id);
 CREATE INDEX IDX_RIF_SALES_CHANNEL_ENUM_ID ON return_item_fact (sales_channel_enum_id);
-CREATE INDEX IDX_RIF_RETURN_STATUS_ID ON return_item_fact (return_status_id);  
+CREATE INDEX IDX_RIF_RETURN_STATUS_ID ON return_item_fact (return_status_id); 
+CREATE INDEX IDX_RIF_PRODUCT_ID ON return_item_fact (product_id);
+CREATE INDEX IDX_RIF_ORDER_ORIGIN_FACILITY_ID ON return_item_fact (order_origin_facility_id); 
+CREATE INDEX IDX_RIF_DESTINATION_FACILITY_ID ON return_item_fact (destination_facility_id);
+
 
 
 -- ******************************************************************

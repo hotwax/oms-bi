@@ -216,12 +216,12 @@ under the License.
         <index name="IDX_RIF_ORDER_ITEM_FACILITY">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
-            <index-field name="facilityId"/>
+            <index-field name="orderOriginFacilityId"/>
         </index>
         <index name="IDX_RIF_ORDER_ITEM_FACILITY_SHIPMENT_METHOD_TYPE">
             <index-field name="orderId"/>
             <index-field name="orderItemSeqId"/>
-            <index-field name="facilityId"/>
+            <index-field name="orderOriginFacilityId"/>
             <index-field name="shipmentMethodTypeId"/>
         </index>
         <index name="IDX_RIF_SALES_CHANNEL_ENUM_ID">
@@ -229,6 +229,15 @@ under the License.
         </index>
         <index name="IDX_RIF_RETURN_STATUS_ID">
             <index-field name="returnStatusId"/>
+        </index>
+        <index name="IDX_RIF_ORDER_ORIGIN_FACILITY_ID">
+            <index-field name="orderOriginFacilityId"/>
+        </index>
+        <index name="IDX_RIF_DESTINATION_FACILITY_ID">
+            <index-field name="destinationFacilityId"/>
+        </index>
+        <index name="IDX_RIF_PRODUCT_ID">
+            <index-field name="productId"/>
         </index>
     </entity>
     
