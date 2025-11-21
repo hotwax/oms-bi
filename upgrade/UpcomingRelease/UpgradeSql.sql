@@ -3,14 +3,15 @@
 -- ******************************************************************
 
 ALTER TABLE inventory_item_detail_fact
-ADD COLUMN effective_date_dim_id DATE;
+ADD COLUMN EFFECTIVE_DATE_DIM_ID DATE;
+
 
 -- ******************************************************************
 -- Query to insert data into effectiveDateDimId in inventoryItemDetailFact
 -- ******************************************************************
 
 UPDATE inventory_item_detail_fact IIDF
-SET IIDF.effective_date_dim_id = DATE(IIDF.effective_date) WHERE IIDF.effective_date_dim_id IS NULL; 
+SET IIDF.EFFECTIVE_DATE_DIM_ID = DATE(IIDF.effective_date) WHERE IIDF.EFFECTIVE_DATE_DIM_ID IS NULL; 
 
 -- ******************************************************************
 -- Query to add indexes to inventoryItemDetailFact
@@ -43,7 +44,7 @@ CREATE INDEX IDX_OFCH_ASSIGNMENT_ENUM_ID ON order_facility_change_fact (assignme
 -- ******************************************************************
 
 ALTER TABLE order_item_fulfillment_fact
-ADD COLUMN order_date_dim_id DATE;
+ADD COLUMN ORDER_DATE_DIM_ID DATE;
 
 
 -- ******************************************************************
@@ -104,14 +105,15 @@ CREATE INDEX IDX_OAF_ORDER_ITEM ON order_adjustment_fact (order_id, order_item_s
 -- ******************************************************************
 -- Query to add columns to transferOrderItemFact 
 -- ******************************************************************
+
 ALTER TABLE transfer_order_item_fact
-ADD COLUMN order_date_dim_id DATE,
-ADD COLUMN order_entry_date_dim_id DATE,
-ADD COLUMN order_completion_date_dim_id DATE,
-ADD COLUMN order_cancellation_date_dim_id DATE,
-ADD COLUMN order_item_creation_date_dim_id DATE,
-ADD COLUMN order_item_completion_date_dim_id DATE,
-ADD COLUMN order_item_cancellation_date_dim_id DATE;
+ADD COLUMN ORDER_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_ENTRY_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_COMPLETION_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_CANCELLATION_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_ITEM_CREATION_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_ITEM_COMPLETION_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_ITEM_CANCELLATION_DATE_DIM_ID DATE;
 
 -- ***********************************************************************
 -- Query to insert data into Dimention columns in transferOrderItemFact

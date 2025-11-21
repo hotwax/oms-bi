@@ -34,7 +34,6 @@ from
       oi.UNIT_PRICE AS `UNIT_PRICE`,
       oi.STATUS_ID AS `ITEM_STATUS_ID`,
       os.status_datetime AS `ITEM_COMPLETED_DATE`,
-      date(os.status_datetime) AS `ITEM_COMPLETED_DATE_DIM_ID`,
       os.status_user_login AS `FULFILLED_BY_USER_LOGIN_ID`,
       oisg.SHIPMENT_METHOD_TYPE_ID AS `SHIPMENT_METHOD_TYPE_ID`,
       oisg.CREATED_STAMP AS `SHIP_GROUP_CREATED_STAMP`,
