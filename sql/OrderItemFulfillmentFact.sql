@@ -152,6 +152,7 @@ select
   os.order_id AS `ORDER_ID`,
   os.order_item_seq_id AS `ORDER_ITEM_SEQ_ID`,
   os.status_datetime AS `ITEM_COMPLETED_DATE`,
+  date(os.status_datetime) AS `ITEM_COMPLETED_DATE_DIM_ID`,
   rofc.change_datetime AS `BROKERED_DATE`,
   rofc.comments AS `BROKERED_COMMENTS`,
   s.shipment_id AS `SHIPMENT_ID`,

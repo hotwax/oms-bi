@@ -3,14 +3,15 @@
 -- ******************************************************************
 
 ALTER TABLE inventory_item_detail_fact
-ADD COLUMN effective_date_dim_id DATE;
+ADD COLUMN EFFECTIVE_DATE_DIM_ID DATE;
+
 
 -- ******************************************************************
 -- Query to insert data into effectiveDateDimId in inventoryItemDetailFact
 -- ******************************************************************
 
 UPDATE inventory_item_detail_fact IIDF
-SET IIDF.effective_date_dim_id = DATE(IIDF.effective_date) WHERE IIDF.effective_date_dim_id IS NULL; 
+SET IIDF.EFFECTIVE_DATE_DIM_ID = DATE(IIDF.effective_date) WHERE IIDF.EFFECTIVE_DATE_DIM_ID IS NULL; 
 
 -- ******************************************************************
 -- Query to add indexes to inventoryItemDetailFact
@@ -43,7 +44,7 @@ CREATE INDEX IDX_OFCH_ASSIGNMENT_ENUM_ID ON order_facility_change_fact (assignme
 -- ******************************************************************
 
 ALTER TABLE order_item_fulfillment_fact
-ADD COLUMN order_date_dim_id DATE;
+ADD COLUMN ORDER_DATE_DIM_ID DATE;
 
 
 -- ******************************************************************
@@ -99,3 +100,72 @@ CREATE INDEX IDX_RIF_DESTINATION_FACILITY_ID ON return_item_fact (destination_fa
 -- ******************************************************************
 CREATE INDEX IDX_OAF_ORDER_ID ON order_adjustment_fact (order_id);
 CREATE INDEX IDX_OAF_ORDER_ITEM ON order_adjustment_fact (order_id, order_item_seq_id);
+
+
+-- ******************************************************************
+-- Query to add columns to transferOrderItemFact 
+-- ******************************************************************
+
+ALTER TABLE transfer_order_item_fact
+ADD COLUMN ORDER_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_ENTRY_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_COMPLETION_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_CANCELLATION_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_ITEM_CREATION_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_ITEM_COMPLETION_DATE_DIM_ID DATE,
+ADD COLUMN ORDER_ITEM_CANCELLATION_DATE_DIM_ID DATE;
+
+-- ***********************************************************************
+-- Query to insert data into Dimention columns in transferOrderItemFact
+-- ***********************************************************************
+UPDATE transfer_order_item_fact TOIF
+SET TOIF.order_date_dim_id = DATE(TOIF.order_date) WHERE TOIF.order_date_dim_id IS NULL;
+
+UPDATE transfer_order_item_fact TOIF
+SET TOIF.order_entry_date_dim_id = DATE(TOIF.order_entry_date) WHERE TOIF.order_entry_date_dim_id IS NULL; 
+
+UPDATE transfer_order_item_fact TOIF
+SET TOIF.order_completion_date_dim_id = DATE(TOIF.order_completion_date) WHERE TOIF.order_completion_date_dim_id IS NULL;   
+
+UPDATE transfer_order_item_fact TOIF
+SET TOIF.order_cancellation_date_dim_id = DATE(TOIF.order_cancellation_date) WHERE TOIF.order_cancellation_date_dim_id IS NULL;
+
+UPDATE transfer_order_item_fact TOIF
+SET TOIF.order_item_creation_date_dim_id = DATE(TOIF.order_item_creation_date) WHERE TOIF.order_item_creation_date_dim_id IS NULL;  
+
+UPDATE transfer_order_item_fact TOIF
+SET TOIF.order_item_completion_date_dim_id = DATE(TOIF.order_item_completion_date) WHERE TOIF.order_item_completion_date_dim_id IS NULL;    
+
+UPDATE transfer_order_item_fact TOIF
+SET TOIF.order_item_cancellation_date_dim_id = DATE(TOIF.order_item_cancellation_date) WHERE TOIF.order_item_cancellation_date_dim_id IS NULL;  
+
+
+-- ******************************************************************
+-- Query to add indexes to transferOrderItemFact
+-- ******************************************************************
+
+CREATE INDEX IDX_TOIF_ORDER_DATE_DIM_ID ON transfer_order_item_fact (order_date_dim_id);
+CREATE INDEX IDX_TOIF_ORDER_ENTRY_DATE_DIM_ID ON transfer_order_item_fact (order_entry_date_dim_id);
+CREATE INDEX IDX_TOIF_ORDER_COMPLETION_DATE_DIM_ID ON transfer_order_item_fact (order_completion_date_dim_id);
+CREATE INDEX IDX_TOIF_ORDER_CANCELLATION_DATE_DIM_ID ON transfer_order_item_fact (order_cancellation_date_dim_id);
+CREATE INDEX IDX_TOIF_ORDER_ITEM_CREATION_DATE_DIM_ID ON transfer_order_item_fact (order_item_creation_date_dim_id);
+CREATE INDEX IDX_TOIF_ORDER_ITEM_COMPLETION_DATE_DIM_ID ON transfer_order_item_fact (order_item_completion_date_dim_id);
+CREATE INDEX IDX_TOIF_ORDER_ITEM_CANCELLATION_DATE_DIM_ID ON transfer_order_item_fact (order_item_cancellation_date_dim_id);    
+CREATE INDEX IDX_TOIF_PRODUCT_ID ON transfer_order_item_fact (product_id);
+CREATE INDEX IDX_TOIF_ORIGIN_FACILITY_ID ON transfer_order_item_fact (origin_facility_id);
+CREATE INDEX IDX_TOIF_DESTINATION_FACILITY_ID ON transfer_order_item_fact (destination_facility_id);
+CREATE INDEX IDX_TOIF_SALES_CHANNEL_ENUM_ID ON transfer_order_item_fact (sales_channel_enum_id);
+CREATE INDEX IDX_TOIF_ORDER_DATE ON transfer_order_item_fact (order_date);
+CREATE INDEX IDX_TOIF_SHIPMENT_ID ON transfer_order_item_fact (shipment_id);
+CREATE INDEX IDX_TOIF_SHIPMENT_METHOD_TYPE_ID ON transfer_order_item_fact (requested_ship_meth_type_id);
+CREATE INDEX IDX_TOIF_ORDER_ID ON transfer_order_item_fact (order_id);
+CREATE INDEX IDX_TOIF_ORDER_ITEM ON transfer_order_item_fact (order_id, order_item_seq_id);
+
+
+-- ******************************************************************
+-- Query to add indexes to OrderSalesAgreement
+-- ******************************************************************
+CREATE INDEX IDX_OSA_ORDER_ID ON order_sales_agreement (order_id);
+CREATE INDEX IDX_OSA_LINE_TYPE ON order_sales_agreement (line_type);
+
+
