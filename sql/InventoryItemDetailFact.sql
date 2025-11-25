@@ -44,7 +44,7 @@ SELECT
   IID.RECEIPT_ID as `RECEIPT_ID`,
   IID.effective_date as `cursorDate`,
   IIV.CHANGE_BY_USER_LOGIN_ID as `CHANGE_BY_USER_LOGIN`,
-  IIV.COMMENTS as `COMMENTS`
+  IIV.COMMENTS as `COMMENTS`,
   IID.physical_inventory_id as `PHYSICAL_INVENTORY_ID`
 FROM
   inventory_item_detail IID
