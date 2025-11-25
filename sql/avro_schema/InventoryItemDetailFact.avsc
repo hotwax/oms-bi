@@ -26,7 +26,7 @@
     {"name": "RETURN_ITEM_SEQ_ID", "type": "string"},
     {"name": "ITEM_ISSUANCE_ID", "type": "string"},
     {"name": "RECEIPT_ID", "type": "string"},
-    {"name": "CREATED_BY_USER_LOGIN", "type": "string"},
+    {"name": "CHANGE_BY_USER_LOGIN", "type": "string"},
     {"name": "COMMENTS", "type": "string"},
   ]
 }

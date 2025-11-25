@@ -9,7 +9,7 @@ ALTER TABLE inventory_item_detail_fact
 ADD COLUMN COMMENTS TEXT;
 
 ALTER TABLE inventory_item_detail_fact
-ADD COLUMN CREATED_BY_USER_LOGIN VARCHAR(255);
+ADD COLUMN CHANGE_BY_USER_LOGIN VARCHAR(255);
 
 
 -- ******************************************************************

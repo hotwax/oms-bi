@@ -43,14 +43,14 @@ SELECT
   IID.ITEM_ISSUANCE_ID as `ITEM_ISSUANCE_ID`,
   IID.RECEIPT_ID as `RECEIPT_ID`,
   IID.effective_date as `cursorDate`,
-  IIV.CHANGE_BY_USER_LOGIN_ID as `CREATED_BY_USER_LOGIN`,
+  IIV.CHANGE_BY_USER_LOGIN_ID as `CHANGE_BY_USER_LOGIN`,
   IIV.COMMENTS as `COMMENTS`
 FROM
   inventory_item_detail IID
 JOIN
   inventory_item II
   ON IID.inventory_item_id = II.inventory_item_id
-JOIN 
+LEFT JOIN 
   inventory_item_variance IIV
   ON IID.inventory_item_id = IIV.inventory_item_id
 
