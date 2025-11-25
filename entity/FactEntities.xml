@@ -424,6 +424,7 @@ under the License.
         <field name="atpBeforeDiff" type="number-integer"/>
         <field name="changeByUserLogin" type="id-long"/>
         <field name="comments" type="text-very-long"/>
+        <field name="physicalInventoryId" type="id"/>
         <index name="IDX_IIDF_EFFECTIVE_DATE">
             <index-field name="effectiveDate"/>
         </index>
@@ -438,6 +439,9 @@ under the License.
         </index>
         <index name="IDX_IIDF_PRODUCT_ID">
             <index-field name="productId"/>
+        </index>
+        <index name="IDX_IIDF_PHYSICAL_INVENTORY_ID">
+            <index-field name="physicalInventoryId"/>
         </index>
     </entity>
 

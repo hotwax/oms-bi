@@ -28,5 +28,6 @@
     {"name": "RECEIPT_ID", "type": "string"},
     {"name": "CHANGE_BY_USER_LOGIN", "type": "string"},
     {"name": "COMMENTS", "type": "string"},
+    {"name": "PHYSICAL_INVENTORY_ID", "type": "string"},
   ]
 }
