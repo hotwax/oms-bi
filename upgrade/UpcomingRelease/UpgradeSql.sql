@@ -5,6 +5,15 @@
 ALTER TABLE inventory_item_detail_fact
 ADD COLUMN EFFECTIVE_DATE_DIM_ID DATE;
 
+ALTER TABLE inventory_item_detail_fact
+ADD COLUMN COMMENTS TEXT;
+
+ALTER TABLE inventory_item_detail_fact
+ADD COLUMN CHANGE_BY_USER_LOGIN VARCHAR(255);
+
+ALTER TABLE inventory_item_detail_fact
+ADD COLUMN PHYSICAL_INVENTORY_ID VARCHAR(255);
+
 
 -- ******************************************************************
 -- Query to insert data into effectiveDateDimId in inventoryItemDetailFact
@@ -22,6 +31,7 @@ CREATE INDEX IDX_IIDF_EFFECTIVE_DATE_DIM_ID ON inventory_item_detail_fact (effec
 CREATE INDEX IDX_IIDF_REASON_ENUM_ID ON inventory_item_detail_fact (reason_enum_id);
 CREATE INDEX IDX_IIDF_FACILITY_ID ON inventory_item_detail_fact (facility_id);
 CREATE INDEX IDX_IIDF_PRODUCT_ID ON inventory_item_detail_fact (product_id);
+CREATE INDEX IDX_IIDF_PHYSICAL_INVENTORY_ID ON inventory_item_detail_fact (physical_inventory_id);
 
 
 -- ******************************************************************

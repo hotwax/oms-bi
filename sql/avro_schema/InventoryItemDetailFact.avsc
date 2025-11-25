@@ -10,7 +10,7 @@
     {"name": "PRODUCT_ID", "type": "string"},
     {"name": "AVERAGE_COST_POST_EVENT", "type": "double"},
     {"name": "EFFECTIVE_DATE", "type": {"type": "long", "logicalType": "timestamp-millis"}},
-    {"name": "EFFECTIVE_DATE_DIM_ID", "type": {"type": "int", "logicalType": "date"}},
+    {"name": "EFFECTIVE_DATE_DIM_ID", "type": {"type": "long", "logicalType": "timestamp-millis"}},
     {"name": "QUANTITY_ON_HAND_DIFF", "type": "int"},
     {"name": "AVAILABLE_TO_PROMISE_DIFF", "type": "int"},
     {"name": "ACCOUNTING_QUANTITY_DIFF", "type": "int"},
@@ -25,6 +25,9 @@
     {"name": "RETURN_ID", "type": "string"},
     {"name": "RETURN_ITEM_SEQ_ID", "type": "string"},
     {"name": "ITEM_ISSUANCE_ID", "type": "string"},
-    {"name": "RECEIPT_ID", "type": "string"}
+    {"name": "RECEIPT_ID", "type": "string"},
+    {"name": "CHANGE_BY_USER_LOGIN", "type": "string"},
+    {"name": "COMMENTS", "type": "string"},
+    {"name": "PHYSICAL_INVENTORY_ID", "type": "string"},
   ]
 }
