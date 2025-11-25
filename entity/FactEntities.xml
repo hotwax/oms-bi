@@ -422,7 +422,7 @@ under the License.
         <field name="accountingQuantityDiff" type="number-integer"/>
         <field name="qohBeforeDiff" type="number-integer"/>
         <field name="atpBeforeDiff" type="number-integer"/>
-        <field name="createdByUserLogin" type="id-long"/>
+        <field name="changeByUserLogin" type="id-long"/>
         <field name="comments" type="text-very-long"/>
         <index name="IDX_IIDF_EFFECTIVE_DATE">
             <index-field name="effectiveDate"/>
