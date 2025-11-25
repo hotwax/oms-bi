@@ -5,6 +5,12 @@
 ALTER TABLE inventory_item_detail_fact
 ADD COLUMN EFFECTIVE_DATE_DIM_ID DATE;
 
+ALTER TABLE inventory_item_detail_fact
+ADD COLUMN COMMENTS TEXT;
+
+ALTER TABLE inventory_item_detail_fact
+ADD COLUMN CREATED_BY_USER_LOGIN VARCHAR(255);
+
 
 -- ******************************************************************
 -- Query to insert data into effectiveDateDimId in inventoryItemDetailFact
