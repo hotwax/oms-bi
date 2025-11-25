@@ -53,4 +53,5 @@ JOIN
 LEFT JOIN 
   inventory_item_variance IIV
   ON IID.inventory_item_id = IIV.inventory_item_id
+  AND IID.physical_inventory_id = IIV.physical_inventory_id
 
