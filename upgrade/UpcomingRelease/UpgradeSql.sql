@@ -56,6 +56,9 @@ CREATE INDEX IDX_OFCH_ASSIGNMENT_ENUM_ID ON order_facility_change_fact (assignme
 ALTER TABLE order_item_fulfillment_fact
 ADD COLUMN ORDER_DATE_DIM_ID DATE;
 
+ALTER TABLE order_item_fulfillment_fact
+ADD COLUMN ORDER_STATUS VARCHAR(255);
+
 
 -- ******************************************************************
 -- Query to insert data into orderDateDimId in orderItemFulfillmentFact
@@ -63,6 +66,9 @@ ADD COLUMN ORDER_DATE_DIM_ID DATE;
 
 UPDATE order_item_fulfillment_fact OIFF
 SET OIFF.order_date_dim_id = DATE(OIFF.order_date) WHERE OIFF.order_date_dim_id IS NULL;
+
+UPDATE order_item_fulfillment_fact OIFF
+SET OIFF.order_status = 'ORDER_COMPLETED' WHERE OIFF.order_status IS NULL;
 
 -- ******************************************************************
 -- Query to add indexes to orderItemFulfillmentFact
@@ -77,6 +83,7 @@ CREATE INDEX IDX_OIFF_ORDER_DATE_DIM_ID ON order_item_fulfillment_fact (order_da
 CREATE INDEX IDX_OIFF_ITEM_COMPLETED_DIM_ID ON order_item_fulfillment_fact (item_completed_date_dim_id);
 CREATE INDEX IDX_OIFF_ITEM_CANCELLED_DIM_ID ON order_item_fulfillment_fact (item_cancelled_date_dim_id);
 CREATE INDEX IDX_OIFF_ODATE_SC_SHIP ON order_item_fulfillment_fact (order_date_dim_id,sales_channel_enum_id,shipment_method_type_id);
+CREATE INDEX IDX_OIFF_ORDER_STATUS ON order_item_fulfillment_fact (order_status);
 
 
 -- ******************************************************************
