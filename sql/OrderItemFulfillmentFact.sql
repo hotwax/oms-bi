@@ -100,7 +100,7 @@ FROM
                   AND mos.status_id = "ITEM_COMPLETED"
         )
     ORDER BY os.status_datetime
-) temp where cursorDate > "2025-07-01 00:00:00"
+) temp
 
 -- ******************************************************************
 -- SQL to fetch the remaining data, mainly status dates (Completed order)
@@ -333,7 +333,7 @@ WITH
 SELECT
   os.order_id AS `ORDER_ID`,
   os.order_item_seq_id AS `ORDER_ITEM_SEQ_ID`,
-  os.status_datetime AS `ITEM_COMPLETED_DATE`,
+  os.status_datetime AS `ITEM_CANCELLED_DATE`,
   rofc.change_datetime AS `BROKERED_DATE`,
   rofc.comments AS `BROKERED_COMMENTS`,
   s.shipment_id AS `SHIPMENT_ID`,
