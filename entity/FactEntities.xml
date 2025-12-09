@@ -23,6 +23,7 @@ under the License.
         <field name="orderItemFulfillmentFactId" type="id" is-pk="true"/>
         <field name="orderId" type="id" />
         <field name="orderItemSeqId" type="id" />
+        <field name="orderStatus" type="text-short"/>
         <field name="externalId" type="text-short"/>
         <field name="itemExternalId" type="id-long"/>
         <field name="orderName" type="text-short"/>
@@ -114,6 +115,9 @@ under the License.
         </index>
         <index name="IDX_OIFF_ITEM_CANCELLED_DIM_ID">
             <index-field name="itemCancelledDateDimId"/>
+        </index>
+        <index name="IDX_OIFF_ORDER_STATUS">
+            <index-field name="orderStatus"/>
         </index>
         <index name="IDX_OIFF_ODATE_SC_SHIP">
             <index-field name="orderDateDimId"/>

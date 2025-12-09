@@ -6,6 +6,7 @@
     {"name": "ORDER_ITEM_FULFILLMENT_FACT_ID", "type": "string", "aliases": ["PRIMARY_KEY"] },
     {"name": "ORDER_ID", "type": "string"},
     {"name": "ORDER_ITEM_SEQ_ID", "type": "string"},
+    {"name": "ORDER_STATUS", "type": "string"},
     {"name": "EXTERNAL_ID", "type": "string"},
     {"name": "ITEM_EXTERNAL_ID", "type": "string"},
     {"name": "ORDER_NAME", "type": "string"},
