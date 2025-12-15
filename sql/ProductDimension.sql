@@ -44,7 +44,7 @@ SELECT
             else null
         end
     ) AS `VARIATION_TYPE`,
-    P.CREATED_TX_STAMP AS 'cursorDate'
+    P.CREATED_DATE AS 'cursorDate'
 FROM
     PRODUCT P
     JOIN PRODUCT_TYPE PT ON PT.PRODUCT_TYPE_ID = P.PRODUCT_TYPE_ID
