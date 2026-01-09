@@ -80,11 +80,11 @@ FROM
         ON os1.order_id = oi.order_id
        AND os1.order_item_seq_id = oi.order_item_seq_id
        AND os1.ship_group_seq_id = oisg.ship_group_seq_id
-    JOIN shipment_item si 
-        ON si.shipment_id=os1.shipment_id
-        AND si.shipment_item_seq_id=os1.shipment_item_seq_id
     LEFT JOIN shipment s
         ON s.shipment_id = os1.shipment_id
+    JOIN shipment_item si 
+        ON si.shipment_id=s.shipment_id
+        AND si.shipment_item_seq_id=os1.shipment_item_seq_id
     LEFT JOIN shipment_route_segment srs
         ON srs.shipment_id = s.shipment_id
     LEFT JOIN shipment_package_route_seg sprs
@@ -186,11 +186,11 @@ FROM
   LEFT JOIN order_shipment os1
     ON os1.order_id = os.order_id
     AND os1.order_item_seq_id = os.order_item_seq_id
-  JOIN shipment_item si 
-        ON si.shipment_id=os1.shipment_id
-        AND si.shipment_item_seq_id=os1.shipment_item_seq_id
   LEFT JOIN shipment s
     ON s.shipment_id = os1.shipment_id
+  JOIN shipment_item si
+    ON si.shipment_id=s.shipment_id
+    AND si.shipment_item_seq_id=os1.shipment_item_seq_id
   LEFT JOIN ranked_order_facility_change rofc
     ON rofc.order_id = os.order_id
     AND rofc.order_item_seq_id = os.order_item_seq_id
