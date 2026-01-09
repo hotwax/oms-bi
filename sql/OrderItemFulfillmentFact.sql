@@ -25,7 +25,7 @@ FROM
          WHERE oa.order_id = oh.order_id
            AND oa.order_adjustment_type_id IN ("SHIPPING_CHARGES", "SHIPPING_SALES_TAX", "EXT_SHIP_ADJUSTMENT")
         ) AS `SHIPPING_CHARGES`,
-        oi.PRODUCT_ID AS `PRODUCT_ID`,
+        si.PRODUCT_ID AS `PRODUCT_ID`,
         oi.ITEM_DESCRIPTION AS `ITEM_DESCRIPTION`,
         oi.QUANTITY AS `QUANTITY`,
         oi.CANCEL_QUANTITY AS `CANCEL_QUANTITY`,
@@ -82,6 +82,9 @@ FROM
        AND os1.ship_group_seq_id = oisg.ship_group_seq_id
     LEFT JOIN shipment s
         ON s.shipment_id = os1.shipment_id
+    JOIN shipment_item si 
+        ON si.shipment_id=s.shipment_id
+        AND si.shipment_item_seq_id=os1.shipment_item_seq_id
     LEFT JOIN shipment_route_segment srs
         ON srs.shipment_id = s.shipment_id
     LEFT JOIN shipment_package_route_seg sprs
@@ -136,6 +139,7 @@ WITH
   )
 
 SELECT
+  si.product_id AS 'PRODUCT_ID',
   os.order_id AS `ORDER_ID`,
   os.order_item_seq_id AS `ORDER_ITEM_SEQ_ID`,
   os.status_datetime AS `ITEM_COMPLETED_DATE`,
@@ -184,6 +188,9 @@ FROM
     AND os1.order_item_seq_id = os.order_item_seq_id
   LEFT JOIN shipment s
     ON s.shipment_id = os1.shipment_id
+  JOIN shipment_item si
+    ON si.shipment_id=s.shipment_id
+    AND si.shipment_item_seq_id=os1.shipment_item_seq_id
   LEFT JOIN ranked_order_facility_change rofc
     ON rofc.order_id = os.order_id
     AND rofc.order_item_seq_id = os.order_item_seq_id
@@ -395,6 +402,7 @@ LEFT JOIN enrichment e
 ON o.ORDER_ID = e.ORDER_ID
 and o.ORDER_ITEM_SEQ_ID = e.ORDER_ITEM_SEQ_ID
 and o.SHIPMENT_ID = e.SHIPMENT_ID
+and o.PRODUCT_ID = e.PRODUCT_ID
 
 -- ******************************************************************
 -- Query to combine whole data (Cancelled orders)
