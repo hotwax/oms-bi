@@ -23,7 +23,7 @@ SELECT
     orun.ROUTING_BATCH_ID AS `ROUTING_BATCH_ID`,
     ofc.ROUTER_USER_LOGIN AS `ROUTER_USER_LOGIN`,
     orr.ASSIGNMENT_ENUM_ID AS `ASSIGNMENT_ENUM_ID`,
-    ofc.CREATED_TX_STAMP AS `cursorDate`
+    ofc.CHANGE_DATETIME AS `cursorDate`
 FROM order_facility_change ofc
 JOIN order_header oh ON oh.ORDER_ID = ofc.ORDER_ID
 JOIN order_routing_group org ON org.ROUTING_GROUP_ID = ofc.ROUTING_GROUP_ID
