@@ -175,7 +175,7 @@ under the License.
         
         <field name="returnId" type="id"/>
         <field name="returnItemSeqId" type="id"/>
-        <field name="externalReturnId" type="id"/>
+        <field name="externalReturnId" type="text-short"/>
         <field name="dataSourceId" type="text-short"/>
         <field name="returnDate" type="date-time"/>
         <field name="returnEntryDate" type="date-time"/>
