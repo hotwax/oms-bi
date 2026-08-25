@@ -82,7 +82,7 @@ FROM
        AND os1.ship_group_seq_id = oisg.ship_group_seq_id
     LEFT JOIN shipment s
         ON s.shipment_id = os1.shipment_id
-    JOIN shipment_item si 
+    LEFT JOIN shipment_item si
         ON si.shipment_id=s.shipment_id
         AND si.shipment_item_seq_id=os1.shipment_item_seq_id
     LEFT JOIN shipment_route_segment srs
@@ -188,7 +188,7 @@ FROM
     AND os1.order_item_seq_id = os.order_item_seq_id
   LEFT JOIN shipment s
     ON s.shipment_id = os1.shipment_id
-  JOIN shipment_item si
+  LEFT JOIN shipment_item si
     ON si.shipment_id=s.shipment_id
     AND si.shipment_item_seq_id=os1.shipment_item_seq_id
   LEFT JOIN ranked_order_facility_change rofc
