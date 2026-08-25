@@ -14,7 +14,7 @@ select
     pa.COUNTRY_GEO_ID AS `COUNTRY_GEO_ID`,
     pa.POSTAL_CODE AS `POSTAL_CODE`,
     pa.ADDRESS1 AS `ADDRESS1`,
-    f.CREATED_TX_STAMP AS 'cursorDate'
+    f.CREATED_STAMP AS 'cursorDate'
 from
     facility f
     join facility_type ft on ft.FACILITY_TYPE_ID = f.FACILITY_TYPE_ID
