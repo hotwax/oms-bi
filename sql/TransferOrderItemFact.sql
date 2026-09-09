@@ -160,7 +160,7 @@ with
     where
       os.status_id = "ITEM_CREATED"
       and (
-        os.status_datetime between '${min_cursor}' and '${max_cursor}'
+        os.status_datetime between '${min_cursor}' and '${max_cursor}' + INTERVAL 1 MINUTE
       )
   )
 select
