@@ -197,6 +197,12 @@ under the License.
         <field name="returnDiscountAmt" type="currency-amount"/>
         <field name="totalTaxRefundAmt" type="currency-amount"/>
         <field name="returnShippingAmt" type="currency-amount"/>
+        <field name="shpfiRefundDiscrep" type="currency-amount"/>
+        <field name="shpfiCustomer" type="currency-amount"/>
+        <field name="shpfiDamage" type="currency-amount"/>
+        <field name="shpfiBalancingAdj" type="currency-amount"/>
+        <field name="shpfiPendRefDisc" type="currency-amount"/>
+        <field name="shpfiRestock" type="currency-amount"/>
         <field name="returnItemDescription" type="text-long"/>
         <field name="returnItemTypeId" type="id"/>
         <field name="returnReasonId" type="id"/>
