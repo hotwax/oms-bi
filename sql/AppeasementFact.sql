@@ -46,7 +46,7 @@ SELECT
   pa.LATITUDE AS `ORDER_ORG_LATITUDE`,
   rh.CREATED_STAMP AS 'cursorDate'
 FROM return_header rh
-JOIN return_adjustment ra ON ra.RETURN_ID = rh.RETURN_ID AND ra.RETURN_ADJUSTMENT_TYPE_ID = "APPEASEMENT"
+JOIN return_adjustment ra ON ra.RETURN_ID = rh.RETURN_ID AND rh.RETURN_HEADER_TYPE_ID = "APPEASEMENT"
 LEFT JOIN order_header oh ON oh.ORDER_ID = ra.ORDER_ID
 LEFT JOIN (
   select ocm.order_id, ocm.CONTACT_MECH_ID
