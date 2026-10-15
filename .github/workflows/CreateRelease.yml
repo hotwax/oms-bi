@@ -81,8 +81,13 @@ jobs:
       - name: Move upgrade/UpcomingRelease → upgrade/${{ env.tag_name }}
         shell: bash
         run: |
+          target="upgrade/${{ env.tag_name }}"
+          if [[ -e "$target" || -L "$target" ]]; then
+            echo "::error::Release upgrade target $target already exists; refusing to nest or overwrite upgrade data."
+            exit 1
+          fi
           if [[ -d upgrade/UpcomingRelease ]]; then
-            git mv upgrade/UpcomingRelease "upgrade/${{ env.tag_name }}"
+            git mv upgrade/UpcomingRelease "$target"
           else
             echo "Directory upgrade/UpcomingRelease does not exist; skipping move."
           fi
